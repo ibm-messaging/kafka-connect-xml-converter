@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="#connectSchema">
+    <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" id="connectSchema">
+        <xs:element name="root">
+            <xs:complexType>
+                <xs:sequence>
+                    <xs:any maxOccurs="1" minOccurs="0" namespace="http://www.w3.org/2001/XMLSchema" processContents="skip" />
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="entry">
+                        <xs:complexType>
+                            <xs:sequence>
+                                <xs:element name="key" type="xs:string" />
+                                <xs:element name="value">
+                                    <xs:complexType>
+                                        <xs:sequence>
+                                            <xs:element name="valueLetter" type="xs:string" />
+                                            <xs:element name="valueNumber" type="xs:integer" />
+                                        </xs:sequence>
+                                    </xs:complexType>
+                                </xs:element>
+                            </xs:sequence>
+                        </xs:complexType>
+                    </xs:element>
+                </xs:sequence>
+            </xs:complexType>
+        </xs:element>
+    </xs:schema>
+    <entry>
+        <key>key0</key>
+        <value>
+            <valueLetter>aa</valueLetter>
+            <valueNumber>1</valueNumber>
+        </value>
+    </entry>
+    <entry>
+        <key>key1</key>
+        <value>
+            <valueLetter>bb</valueLetter>
+            <valueNumber>2</valueNumber>
+        </value>
+    </entry>
+    <entry>
+        <key>key2</key>
+        <value>
+            <valueLetter>cc</valueLetter>
+            <valueNumber>3</valueNumber>
+        </value>
+    </entry>
+</root>

@@ -1,0 +1,24 @@
+{
+    "test1": {
+        "test2": "one"
+    },
+    "outer": {
+        "test3": {
+            "test4": "two",
+            "test5": [
+                {
+                    "test6": "three", 
+                    "entry": "test message"
+                },
+                {
+                    "test6": "four",
+                    "entry": "next item"
+                },
+                {
+                    "test7": "five",
+                    "entry": "final item"
+                }
+            ]
+        }
+    }
+}

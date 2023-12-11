@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<root>
+    <one-of-the-maps>
+        <entry>
+            <key>key1</key>
+            <value>value1</value>
+        </entry>
+        <entry>
+            <key>key2</key>
+            <value>value2</value>
+        </entry>
+        <entry>
+            <key>key3</key>
+            <value>value3</value>
+        </entry>
+    </one-of-the-maps>
+    <one-of-the-maps>
+        <entry>
+            <key>keyA</key>
+            <value>valueA</value>
+        </entry>
+        <entry>
+            <key>keyB</key>
+            <value>valueB</value>
+        </entry>
+    </one-of-the-maps>
+</root>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<root>
+    <set-of-strings>member</set-of-strings>
+    <set-of-strings>of</set-of-strings>
+    <set-of-strings>the</set-of-strings>
+    <set-of-strings>set</set-of-strings>
+    <list-of-strings>list</list-of-strings>
+    <list-of-strings>members</list-of-strings>
+    <array-of-strings>string</array-of-strings>
+    <array-of-strings>items</array-of-strings>
+    <map-of-arrays>
+        <entry>
+            <key>one</key>
+            <key>two</key>
+            <key>three</key>
+            <value>1</value>
+            <value>2</value>
+            <value>3</value>
+        </entry>
+        <entry>
+            <key>ten</key>
+            <key>twenty</key>
+            <value>10</value>
+            <value>20</value>
+        </entry>
+    </map-of-arrays>
+</root>

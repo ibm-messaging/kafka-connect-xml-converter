@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<root>
+    <entry>
+        <key>1</key>
+        <value>10</value>
+    </entry>
+    <entry>
+        <key>2</key>
+        <value>20</value>
+    </entry>
+    <entry>
+        <key>3</key>
+        <value>30</value>
+    </entry>
+    <entry>
+        <key>4</key>
+        <value>40</value>
+    </entry>
+    <entry>
+        <key>5</key>
+        <value>50</value>
+    </entry>
+</root>

@@ -1,0 +1,124 @@
+{
+    "schema": {
+        "type": "struct",
+        "fields": [
+            {
+                "type": "struct",
+                "fields": [
+                    {
+                        "type": "string",
+                        "optional": false,
+                        "field": "name"
+                    },
+                    {
+                        "type": "struct",
+                        "fields": [
+                            {
+                                "type": "string",
+                                "optional": true,
+                                "field": "type"
+                            },
+                            {
+                                "type": "string",
+                                "optional": false,
+                                "field": "number"
+                            }
+                        ],
+                        "optional": false,
+                        "field": "phone"
+                    },
+                    {
+                        "type": "string",
+                        "optional": false,
+                        "field": "email"
+                    },
+                    {
+                        "type": "string",
+                        "optional": true,
+                        "field": "address"
+                    },
+                    {
+                        "type": "string",
+                        "optional": true,
+                        "field": "postalZip"
+                    },
+                    {
+                        "type": "string",
+                        "optional": true,
+                        "field": "region"
+                    }
+                ],
+                "optional": false,
+                "field": "customer"
+            },
+            {
+                "type": "array",
+                "items": {
+                    "type": "struct",
+                    "fields": [
+                        {
+                            "type": "string",
+                            "optional": false,
+                            "field": "brand"
+                        },
+                        {
+                            "type": "string",
+                            "optional": false,
+                            "field": "item"
+                        },
+                        {
+                            "type": "int32",
+                            "optional": false,
+                            "field": "quantity"
+                        }
+                    ],
+                    "optional": false
+                },
+                "optional": false,
+                "field": "product"
+            },
+            {
+                "type": "struct",
+                "fields": [
+                    {
+                        "type": "string",
+                        "optional": false,
+                        "field": "date"
+                    }
+                ],
+                "optional": false,
+                "field": "order"
+            }
+        ],
+        "optional": false,
+        "name": "root"
+    },
+    "payload": {
+        "customer": {
+            "name": "Helen Velazquez",
+            "phone": {
+                "type": "landline",
+                "number": "0911 910 5491"
+            },
+            "email": "mus.donec.dignissim@yahoo.ca",
+            "address": "3249 Hendrerit Av.",
+            "postalZip": "F2 1IX",
+            "region": "Dunbartonshire"
+        },
+        "product": [
+            {
+                "brand": "Acme Inc",
+                "item": "Awesome-ivator",
+                "quantity": 1
+            },
+            {
+                "brand": "Globex",
+                "item": "Widget",
+                "quantity": 2
+            }
+        ],
+        "order": {
+            "date": "2023-11-05 22:11:00"
+        }
+    }
+}

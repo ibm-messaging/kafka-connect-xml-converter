@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="#connectSchema">
+    <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" id="connectSchema">
+        <xs:element name="root">
+            <xs:complexType>
+                <xs:sequence>
+                    <xs:any maxOccurs="1" minOccurs="0" namespace="http://www.w3.org/2001/XMLSchema" processContents="skip" />
+                    <xs:element maxOccurs="unbounded" name="maps">
+                        <xs:complexType>
+                            <xs:sequence>
+                                <xs:element maxOccurs="unbounded" minOccurs="0" name="entry">
+                                    <xs:complexType>
+                                        <xs:sequence>
+                                            <xs:element name="key">
+                                                <xs:complexType>
+                                                    <xs:sequence>
+                                                        <xs:element name="keyA" type="xs:string" />
+                                                        <xs:element name="keyB" type="xs:string" />
+                                                    </xs:sequence>
+                                                </xs:complexType>
+                                            </xs:element>
+                                            <xs:element name="value">
+                                                <xs:complexType>
+                                                    <xs:sequence>
+                                                        <xs:element name="valA" type="xs:string" />
+                                                        <xs:element name="valB" type="xs:string" />
+                                                    </xs:sequence>
+                                                </xs:complexType>
+                                            </xs:element>
+                                        </xs:sequence>
+                                    </xs:complexType>
+                                </xs:element>
+                            </xs:sequence>
+                        </xs:complexType>
+                    </xs:element>
+                </xs:sequence>
+            </xs:complexType>
+        </xs:element>
+    </xs:schema>
+    <maps>
+        <entry>
+            <key>
+                <keyA>AAAA</keyA>
+                <keyB>BBBB</keyB>
+            </key>
+            <value>
+                <valA>CCCC</valA>
+                <valB>DDDD</valB>
+            </value>
+        </entry>
+        <entry>
+            <key>
+                <keyA>EEEE</keyA>
+                <keyB>FFFF</keyB>
+            </key>
+            <value>
+                <valA>GGGG</valA>
+                <valB>HHHH</valB>
+            </value>
+        </entry>
+        <entry>
+            <key>
+                <keyA>IIII</keyA>
+                <keyB>JJJJ</keyB>
+            </key>
+            <value>
+                <valA>KKKK</valA>
+                <valB>LLLL</valB>
+            </value>
+        </entry>
+    </maps>
+    <maps>
+        <entry>
+            <key>
+                <keyA>MMMM</keyA>
+                <keyB>NNNN</keyB>
+            </key>
+            <value>
+                <valA>OOOO</valA>
+                <valB>PPPP</valB>
+            </value>
+        </entry>
+        <entry>
+            <key>
+                <keyA>QQQQ</keyA>
+                <keyB>RRRR</keyB>
+            </key>
+            <value>
+                <valA>SSSS</valA>
+                <valB>TTTT</valB>
+            </value>
+        </entry>
+    </maps>
+</root>

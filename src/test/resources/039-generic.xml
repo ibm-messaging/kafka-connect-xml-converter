@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<root>
+    <item1>
+        <key1>itemKey1</key1>
+        <key2>itemKey2</key2>
+        <entry>FIRST</entry>
+    </item1>
+    <themap>
+        <entry>
+            <key>ten</key>
+            <value>10</value>
+        </entry>
+        <entry>
+            <key>hundred</key>
+            <value>100</value>
+        </entry>
+    </themap>
+    <thebigmap>
+        <entry>
+            <key>twenty</key>
+            <value>20</value>
+        </entry>
+        <entry>
+            <key>two-hundred</key>
+            <value>200</value>
+        </entry>
+    </thebigmap>
+</root>

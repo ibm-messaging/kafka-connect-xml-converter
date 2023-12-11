@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="root">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element maxOccurs="unbounded" minOccurs="0" name="entry" type="mapEntry"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:complexType name="mapEntry">
+        <xs:sequence>
+            <xs:element name="key" type="mapKey"/>
+            <xs:element name="value" type="mapValue"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="mapKey">
+        <xs:sequence>
+            <xs:element name="keyLetter" type="xs:string" />
+            <xs:element name="keyNumber" type="xs:integer" />
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="mapValue">
+        <xs:sequence>
+            <xs:element name="valueLetter" type="xs:string" />
+            <xs:element name="valueNumber" type="xs:integer" />
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>

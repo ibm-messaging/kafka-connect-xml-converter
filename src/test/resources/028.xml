@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <bytes>
+        <entry>
+            <key>EBESEw==</key>
+            <value>YGFi</value>
+        </entry>
+        <entry>
+            <key>FBU=</key>
+            <value>cHFyc3Q=</value>
+        </entry>
+    </bytes>
+    <strToBytes>
+        <entry>
+            <key>Hello</key>
+            <value>SGVsbG8=</value>
+        </entry>
+        <entry>
+            <key>World</key>
+            <value>V29ybGQ=</value>
+        </entry>
+        <entry>
+            <key>This is a test</key>
+            <value>VGhpcyBpcyBhIHRlc3Q=</value>
+        </entry>
+    </strToBytes>
+    <bytesToStr>
+        <entry>
+            <key>b25l</key>
+            <value>one</value>
+        </entry>
+        <entry>
+            <key>dHdv</key>
+            <value>two</value>
+        </entry>
+    </bytesToStr>
+</root>

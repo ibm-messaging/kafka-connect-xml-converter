@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="#connectSchema">
+    <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" id="connectSchema">
+        <xs:element name="root">
+            <xs:complexType>
+                <xs:sequence>
+                    <xs:any processContents="skip" namespace="http://www.w3.org/2001/XMLSchema" minOccurs="0" maxOccurs="1"/>
+
+                    <xs:element name="test1">
+                        <xs:complexType>
+                            <xs:sequence>
+                                <xs:element name="test1a">
+                                    <xs:complexType>
+                                        <xs:sequence>
+                                            <xs:element name="test1aa" type="xs:integer" maxOccurs="unbounded" />
+                                            <xs:element name="test1ab" type="xs:double" maxOccurs="unbounded" />
+                                            <xs:element name="test1ac" type="xs:boolean" maxOccurs="unbounded" />
+                                            <xs:element name="test1ad" type="xs:string" maxOccurs="unbounded" />
+                                        </xs:sequence>
+                                    </xs:complexType>
+                                </xs:element>
+                                <xs:element name="test1b" type="xs:string" />
+                                <xs:element name="test1c" type="xs:string" />
+                            </xs:sequence>
+                        </xs:complexType>
+                    </xs:element>
+                </xs:sequence>
+            </xs:complexType>
+        </xs:element>
+    </xs:schema>
+
+    <test1>
+        <test1a>
+            <test1aa>10</test1aa>
+            <test1aa>20</test1aa>
+            <test1aa>30</test1aa>
+            <test1ab>1.1</test1ab>
+            <test1ab>1.2</test1ab>
+            <test1ac>true</test1ac>
+            <test1ac>false</test1ac>
+            <test1ac>true</test1ac>
+            <test1ad>abc</test1ad>
+            <test1ad>def</test1ad>
+            <test1ad>ghi</test1ad>
+            <test1ad>jkl</test1ad>
+        </test1a>
+        <test1b>ppp</test1b>
+        <test1c>qqq</test1c>
+    </test1>
+</root>

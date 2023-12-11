@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="root">
+        <xs:complexType>
+            <xs:all>
+                <xs:element name="lists" type="lists"/>
+                <xs:element name="items" type="items" />
+                <xs:element name="optionals" type="optionals" />
+            </xs:all>
+        </xs:complexType>
+    </xs:element>
+    <xs:complexType name="lists">
+        <xs:sequence>
+            <xs:element name="strings" type="xs:string" maxOccurs="unbounded" />
+            <xs:element name="floats" type="xs:float" maxOccurs="unbounded" />
+            <xs:element name="doubles" type="xs:double" maxOccurs="unbounded" />
+            <xs:element name="shorts" type="xs:short" maxOccurs="unbounded" />
+            <xs:element name="ints" type="xs:integer" maxOccurs="unbounded" />
+            <xs:element name="longs" type="xs:long" maxOccurs="unbounded" />
+            <xs:element name="booleans" type="xs:boolean" maxOccurs="unbounded" />
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="items">
+        <xs:sequence>
+            <xs:element name="string" type="xs:string" />
+            <xs:element name="float" type="xs:float" />
+            <xs:element name="double" type="xs:double" />
+            <xs:element name="short" type="xs:short" />
+            <xs:element name="int" type="xs:integer" />
+            <xs:element name="long" type="xs:long" />
+            <xs:element name="boolean" type="xs:boolean" />
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="optionals">
+        <xs:sequence>
+            <xs:element name="string" type="xs:string" minOccurs="0" maxOccurs="1" />
+            <xs:element name="float" type="xs:float" minOccurs="0" maxOccurs="1" />
+            <xs:element name="double" type="xs:double" minOccurs="0" maxOccurs="1" />
+            <xs:element name="short" type="xs:short" minOccurs="0" maxOccurs="1" />
+            <xs:element name="int" type="xs:integer" minOccurs="0" maxOccurs="1" />
+            <xs:element name="long" type="xs:long" minOccurs="0" maxOccurs="1" />
+            <xs:element name="boolean" type="xs:boolean" minOccurs="0" maxOccurs="1" />
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>

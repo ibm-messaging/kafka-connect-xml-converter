@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+    <optionalByte>10</optionalByte>
+    <oneByte>20</oneByte>
+    <oneUnsignedByte>40</oneUnsignedByte>
+    <multipleBytes>30</multipleBytes>
+    <multipleBytes>31</multipleBytes>
+    <multipleBytes>32</multipleBytes>
+    <multipleBytes>33</multipleBytes>
+    <multipleBytes>34</multipleBytes>
+    <multipleUnsignedBytes>60</multipleUnsignedBytes>
+    <multipleUnsignedBytes>61</multipleUnsignedBytes>
+    <multipleUnsignedBytes>62</multipleUnsignedBytes>
+    <base64EncodedBytes>U2VjcmV0IG1lc3NhZ2U=</base64EncodedBytes>
+</root>

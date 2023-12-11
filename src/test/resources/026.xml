@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<root>
+    <entry>
+        <key>123</key>
+        <value>unusual key 1</value>
+    </entry>
+    <entry>
+        <key />
+        <value>unusual key 2</value>
+    </entry>
+    <entry>
+        <key>Hello!</key>
+        <value>unusual key 3</value>
+    </entry>
+    <my-key>valid key 1</my-key>
+    <entry>
+        <key>12key</key>
+        <value>unusual key 4</value>
+    </entry>
+    <entry>
+        <key>*HELLO*</key>
+        <value>unusual key 5</value>
+    </entry>
+    <my-key-2>valid key 2</my-key-2>
+    <entry>
+        <key>Hello World</key>
+        <value>unusual key 6</value>
+    </entry>
+</root>

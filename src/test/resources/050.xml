@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<root>
+    <entry>
+        <entry>
+            <key>1</key>
+            <key>2</key>
+            <key>3</key>
+            <value>num ONE</value>
+            <value>num TWO</value>
+            <value>num THREE</value>
+        </entry>
+        <entry>
+            <key>100</key>
+            <key>200</key>
+            <value>ONE HUNDRED</value>
+            <value>TWO HUNDRED</value>
+        </entry>
+    </entry>
+    <entry>
+        <entry>
+            <entry>first</entry>
+            <entry>second</entry>
+            <entry>third</entry>
+        </entry>
+        <entry>
+            <entry>tenth</entry>
+            <entry>eleventh</entry>
+            <entry>twelth</entry>
+            <entry>thirteenth</entry>
+        </entry>
+    </entry>
+    <entry>
+        <entry>1.1</entry>
+        <entry>2.2</entry>
+        <entry>3.3</entry>
+        <entry>100.123</entry>
+    </entry>
+</root>

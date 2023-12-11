@@ -1,0 +1,14 @@
+<?xml version = "1.0"?>
+<xs:schema xmlns:xs = "http://www.w3.org/2001/XMLSchema">
+    <xs:element name="root">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="oneByte" type="xs:base64Binary" />
+                <xs:element name="oneUnsignedByte" type="xs:base64Binary" />
+                <xs:element name="multipleBytes" type="xs:base64Binary" />
+                <xs:element name="multipleUnsignedBytes" type="xs:base64Binary" />
+                <xs:element name="base64EncodedBytes" type="xs:base64Binary" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

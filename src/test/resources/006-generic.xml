@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<root>
+    <test1>
+        <test2>one</test2>
+    </test1>
+
+    <outer>
+        <test3>
+            <test5>
+                <entry>test message</entry>
+                <test6>three</test6>
+            </test5>
+            <test5>
+                <entry>next item</entry>
+                <test6>four</test6>
+            </test5>
+            <test5>
+                <entry>final item</entry>
+                <test7>five</test7>
+            </test5>
+            <test4>two</test4>
+        </test3>
+    </outer>
+</root>

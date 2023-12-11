@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <entry>
+        <key keyLetter="A" keyWord="APPLE">
+            <keyString>TEST</keyString>
+        </key>
+        <value valueLetter="B" valueWord="BANANA">
+            <valueString>STRING</valueString>
+        </value>
+    </entry>
+    <entry>
+        <key keyLetter="C" keyWord="CABBAGE">
+            <keyString>INPUT</keyString>
+        </key>
+        <value valueLetter="D" valueWord="DAMSON">
+            <valueString>OUTPUT</valueString>
+        </value>
+    </entry>
+</root>

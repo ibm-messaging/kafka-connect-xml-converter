@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="#connectSchema">
+    <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" id="connectSchema">
+        <xs:element name="root">
+            <xs:complexType>
+                <xs:sequence>
+                    <xs:any processContents="skip" namespace="http://www.w3.org/2001/XMLSchema" minOccurs="0" maxOccurs="1"/>
+
+                    <xs:element name="item1">
+                        <xs:complexType>
+                            <xs:sequence>
+                                <xs:element name="item1-a" type="xs:boolean" />
+                                <xs:element name="item1-b" type="xs:string" />
+                                <xs:element name="item1-c" type="xs:boolean" minOccurs="0" maxOccurs="1"/>
+                                <xs:element name="item1-d" type="xs:string" minOccurs="0" maxOccurs="1"/>
+                                <xs:element name="item1-e" type="xs:string" maxOccurs="unbounded"/>
+                            </xs:sequence>
+                        </xs:complexType>
+                    </xs:element>
+                    <xs:element name="item2" type="xs:string" maxOccurs="unbounded"/>
+                    <xs:element name="item3" maxOccurs="unbounded">
+                        <xs:complexType>
+                            <xs:sequence>
+                                <xs:element name="item3-entry-a" type="xs:string" />
+                                <xs:element name="item3-entry-b" type="xs:string" maxOccurs="unbounded" />
+                                <xs:element name="item3-entry-c" type="xs:string" minOccurs="0" maxOccurs="1"/>
+                            </xs:sequence>
+                        </xs:complexType>
+                    </xs:element>
+                    <xs:element name="item4">
+                        <xs:complexType>
+                            <xs:sequence>
+                                <xs:element name="entry" minOccurs="0" maxOccurs="unbounded">
+                                    <xs:complexType>
+                                        <xs:sequence>
+                                            <xs:element name="key" type="xs:string" />
+                                            <xs:element name="value" type="xs:string" />
+                                        </xs:sequence>
+                                    </xs:complexType>
+                                </xs:element>
+                            </xs:sequence>
+                        </xs:complexType>
+                    </xs:element>
+                    <xs:element name="item5" maxOccurs="unbounded">
+                        <xs:complexType>
+                            <xs:sequence>
+                                <xs:element name="entry" minOccurs="0" maxOccurs="unbounded">
+                                    <xs:complexType>
+                                        <xs:sequence>
+                                            <xs:element name="key" type="xs:string" />
+                                            <xs:element name="value" type="xs:string" />
+                                        </xs:sequence>
+                                    </xs:complexType>
+                                </xs:element>
+                            </xs:sequence>
+                        </xs:complexType>
+                    </xs:element>
+                    <xs:element name="item6">
+                        <xs:complexType>
+                            <xs:sequence>
+                                <xs:element name="entry" minOccurs="0" maxOccurs="unbounded">
+                                    <xs:complexType>
+                                        <xs:sequence>
+                                            <xs:element name="key" type="xs:integer" />
+                                            <xs:element name="value">
+                                                <xs:complexType>
+                                                    <xs:sequence>
+                                                        <xs:element name="message" type="xs:string" />
+                                                        <xs:element name="num" type="xs:integer" />
+                                                        <xs:element name="test" type="xs:boolean" />
+                                                    </xs:sequence>
+                                                </xs:complexType>
+                                            </xs:element>
+                                        </xs:sequence>
+                                    </xs:complexType>
+                                </xs:element>
+                            </xs:sequence>
+                        </xs:complexType>
+                    </xs:element>
+                </xs:sequence>
+            </xs:complexType>
+        </xs:element>
+    </xs:schema>
+
+    <item1>
+        <item1-a>false</item1-a>
+        <item1-b>abc</item1-b>
+        <item1-c>true</item1-c>
+        <item1-e>doo</item1-e>
+        <item1-e>foo</item1-e>
+        <item1-e>goo</item1-e>
+    </item1>
+    <item2>alpha</item2>
+    <item2>beta</item2>
+    <item2>gamma</item2>
+    <item3>
+        <item3-entry-a>AAA</item3-entry-a>
+        <item3-entry-b>A</item3-entry-b>
+        <item3-entry-b>B</item3-entry-b>
+        <item3-entry-c>BBB</item3-entry-c>
+    </item3>
+    <item3>
+        <item3-entry-a>CCC</item3-entry-a>
+        <item3-entry-b>C</item3-entry-b>
+        <item3-entry-b>D</item3-entry-b>
+        <item3-entry-b>E</item3-entry-b>
+    </item3>
+    <item3>
+        <item3-entry-a>FFF</item3-entry-a>
+        <item3-entry-b>F</item3-entry-b>
+        <item3-entry-b>G</item3-entry-b>
+        <item3-entry-c>GGG</item3-entry-c>
+    </item3>
+    <item4>
+        <entry>
+            <key>ooo</key>
+            <value>pqrst</value>
+        </entry>
+        <entry>
+            <key>ppp</key>
+            <value>uvwxy</value>
+        </entry>
+        <entry>
+            <key>qqq</key>
+            <value>rstuv</value>
+        </entry>
+    </item4>
+    <item5>
+        <entry>
+            <key>e1a</key>
+            <value>aaa</value>
+        </entry>
+        <entry>
+            <key>e1b</key>
+            <value>bbb</value>
+        </entry>
+    </item5>
+    <item5>
+        <entry>
+            <key>e2a</key>
+            <value>ccc</value>
+        </entry>
+        <entry>
+            <key>e2b</key>
+            <value>ddd</value>
+        </entry>
+        <entry>
+            <key>e2c</key>
+            <value>eee</value>
+        </entry>
+    </item5>
+    <item5>
+        <entry>
+            <key>e3a</key>
+            <value>fff</value>
+        </entry>
+    </item5>
+    <item6>
+        <entry>
+            <key>2</key>
+            <value>
+                <message>hello</message>
+                <num>1000</num>
+                <test>true</test>
+            </value>
+        </entry>
+        <entry>
+            <key>5</key>
+            <value>
+                <message>world</message>
+                <num>2000</num>
+                <test>false</test>
+            </value>
+        </entry>
+        <entry>
+            <key>9</key>
+            <value>
+                <message>xxx</message>
+                <num>3000</num>
+                <test>true</test>
+            </value>
+        </entry>
+    </item6>
+</root>

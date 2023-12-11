@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<root>
+    <entry>
+        <key>
+            <keyNumber>1</keyNumber>
+            <keyCount>10</keyCount>
+            <entry>100</entry>
+        </key>
+        <value>
+            <valueNumber>1000</valueNumber>
+            <entry>10000</entry>
+        </value>
+    </entry>
+    <entry>
+        <key>
+            <keyNumber>2</keyNumber>
+            <keyCount>20</keyCount>
+            <entry>200</entry>
+        </key>
+        <value>
+            <valueNumber>2000</valueNumber>
+            <entry>20000</entry>
+        </value>
+    </entry>
+</root>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<root>
+    <entry>
+        <key>
+            <keyLetter>A</keyLetter>
+            <keyWord>APPLE</keyWord>
+            <keyString>TEST</keyString>
+            <keyOrdinal>first</keyOrdinal>
+        </key>
+        <value>SIMPLE</value>
+    </entry>
+    <entry>
+        <key>
+            <keyLetter>C</keyLetter>
+            <keyWord>CABBAGE</keyWord>
+            <keyString>INPUT</keyString>
+            <keyOrdinal>second</keyOrdinal>
+        </key>
+        <value>SINGLE</value>
+    </entry>
+</root>

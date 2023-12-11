@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+    <level1Value1>
+        <level2Option3>
+            <level3Value6>third</level3Value6>
+            <level3Value7>option</level3Value7>
+        </level2Option3>
+    </level1Value1>
+
+    <level1Value2>
+        <level2RepeatingItem2>
+            <level3Value6>g</level3Value6>
+            <level3Value7>h</level3Value7>
+        </level2RepeatingItem2>
+        <level2RepeatingItem3>
+            <level3Value6>i</level3Value6>
+            <level3Value7>j</level3Value7>
+        </level2RepeatingItem3>
+    </level1Value2>
+
+    <level1Value3>
+        <level2List2>10</level2List2>
+        <level2List2>20</level2List2>
+        <level2List2>30</level2List2>
+    </level1Value3>
+</root>

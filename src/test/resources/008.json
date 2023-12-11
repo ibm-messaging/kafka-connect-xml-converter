@@ -1,0 +1,25 @@
+{
+    "level1Value1": {
+        "level2Option3": {
+            "level3Value6": "third",
+            "level3Value7": "option"
+        }
+    },
+    "level1Value2": {
+        "level2RepeatingItem2": {
+            "level3Value6": "g",
+            "level3Value7": "h"
+        },
+        "level2RepeatingItem3": {
+            "level3Value6": "i",
+            "level3Value7": "j"
+        }
+    },
+    "level1Value3": {
+        "level2List2": [
+            10,
+            20,
+            30
+        ]
+    }
+}

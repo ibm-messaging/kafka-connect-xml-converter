@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <entry>
+        <key>
+            <keyFloat>7.8</keyFloat>
+            <keyBool>true</keyBool>
+        </key>
+        <key>
+            <keyFloat>17.3</keyFloat>
+            <keyBool>false</keyBool>
+        </key>
+        <value>value0</value>
+    </entry>
+    <entry>
+        <key>
+            <keyFloat>3.9</keyFloat>
+            <keyBool>false</keyBool>
+        </key>
+        <key>
+            <keyFloat>6.2</keyFloat>
+            <keyBool>true</keyBool>
+        </key>
+        <value>value1</value>
+    </entry>
+</root>

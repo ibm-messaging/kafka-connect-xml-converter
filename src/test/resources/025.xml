@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<root>
+    <entry>
+        <key>first</key>
+        <value>1.1</value>
+    </entry>
+    <entry>
+        <value>2.2</value>
+    </entry>
+    <entry>
+        <key>third</key>
+        <value>3.3</value>
+    </entry>
+</root>

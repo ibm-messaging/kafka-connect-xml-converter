@@ -1,0 +1,97 @@
+{
+    "schema": {
+        "type": "struct",
+        "fields": [
+            {
+                "type": "struct",
+                "fields": [
+                    {
+                        "type": "struct",
+                        "fields": [
+                            {
+                                "type": "array",
+                                "items": {
+                                    "type": "int32",
+                                    "optional": false
+                                },
+                                "optional": false,
+                                "field": "test1aa"
+                            },
+                            {
+                                "type": "array",
+                                "items": {
+                                    "type": "double",
+                                    "optional": false
+                                },
+                                "optional": false,
+                                "field": "test1ab"
+                            },
+                            {
+                                "type": "array",
+                                "items": {
+                                    "type": "boolean",
+                                    "optional": false
+                                },
+                                "optional": false,
+                                "field": "test1ac"
+                            },
+                            {
+                                "type": "array",
+                                "items": {
+                                    "type": "string",
+                                    "optional": false
+                                },
+                                "optional": false,
+                                "field": "test1ad"
+                            }
+                        ],
+                        "optional": false,
+                        "field": "test1a"
+                    },
+                    {
+                        "type": "string",
+                        "optional": false,
+                        "field": "test1b"
+                    },
+                    {
+                        "type": "string",
+                        "optional": false,
+                        "field": "test1c"
+                    }
+                ],
+                "optional": false,
+                "field": "test1"
+            }
+        ],
+        "optional": false,
+        "name": "root"
+    },
+    "payload": {
+        "test1": {
+            "test1a": {
+                "test1aa": [
+                    10,
+                    20,
+                    30
+                ],
+                "test1ab": [
+                    1.1,
+                    1.2
+                ],
+                "test1ac": [
+                    true,
+                    false,
+                    true
+                ],
+                "test1ad": [
+                    "abc",
+                    "def",
+                    "ghi",
+                    "jkl"
+                ]
+            },
+            "test1b": "ppp",
+            "test1c": "qqq"
+        }
+    }
+}

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="root">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element maxOccurs="unbounded" minOccurs="0" name="entry" type="entry"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:complexType name="entry">
+        <xs:sequence>
+            <xs:element name="key" type="xs:string" />
+            <xs:element name="value" type="value" />
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="value">
+        <xs:sequence>
+            <xs:element name="valueLetter" type="xs:string" />
+            <xs:element name="valueNumber" type="xs:integer" />
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>

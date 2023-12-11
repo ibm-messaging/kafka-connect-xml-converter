@@ -1,0 +1,190 @@
+{
+    "schema": {
+        "type": "struct",
+        "fields": [
+            {
+                "type": "struct",
+                "fields": [
+                    {
+                        "type": "struct",
+                        "fields": [
+                            {
+                                "type": "string",
+                                "optional": true,
+                                "field": "level3Value1"
+                            },
+                            {
+                                "type": "string",
+                                "optional": false,
+                                "field": "level3Value2"
+                            },
+                            {
+                                "type": "int32",
+                                "optional": false,
+                                "field": "level3Value3"
+                            }
+                        ],
+                        "optional": true,
+                        "field": "level2Option1"
+                    },
+                    {
+                        "type": "struct",
+                        "fields": [
+                            {
+                                "type": "boolean",
+                                "optional": false,
+                                "field": "level3Value4"
+                            },
+                            {
+                                "type": "double",
+                                "optional": false,
+                                "field": "level3Value5"
+                            }
+                        ],
+                        "optional": true,
+                        "field": "level2Option2"
+                    },
+                    {
+                        "type": "array",
+                        "items": {
+                            "type": "struct",
+                            "fields": [
+                                {
+                                    "type": "string",
+                                    "optional": false,
+                                    "field": "level3Value6"
+                                },
+                                {
+                                    "type": "string",
+                                    "optional": false,
+                                    "field": "level3Value7"
+                                }
+                            ],
+                            "optional": false
+                        },
+                        "optional": true,
+                        "field": "level2Option3"
+                    }
+                ],
+                "optional": false,
+                "field": "level1Value1"
+            },
+            {
+                "type": "struct",
+                "fields": [
+                    {
+                        "type": "struct",
+                        "fields": [
+                            {
+                                "type": "string",
+                                "optional": false,
+                                "field": "level3Value6"
+                            },
+                            {
+                                "type": "string",
+                                "optional": false,
+                                "field": "level3Value7"
+                            }
+                        ],
+                        "optional": true,
+                        "field": "level2RepeatingItem1"
+                    },
+                    {
+                        "type": "struct",
+                        "fields": [
+                            {
+                                "type": "string",
+                                "optional": false,
+                                "field": "level3Value6"
+                            },
+                            {
+                                "type": "string",
+                                "optional": false,
+                                "field": "level3Value7"
+                            }
+                        ],
+                        "optional": false,
+                        "field": "level2RepeatingItem2"
+                    },
+                    {
+                        "type": "struct",
+                        "fields": [
+                            {
+                                "type": "string",
+                                "optional": false,
+                                "field": "level3Value6"
+                            },
+                            {
+                                "type": "string",
+                                "optional": false,
+                                "field": "level3Value7"
+                            }
+                        ],
+                        "optional": false,
+                        "field": "level2RepeatingItem3"
+                    }
+                ],
+                "optional": true,
+                "field": "level1Value2"
+            },
+            {
+                "type": "struct",
+                "fields": [
+                    {
+                        "type": "array",
+                        "items": {
+                            "type": "string",
+                            "optional": false
+                        },
+                        "optional": false,
+                        "field": "level2List1"
+                    },
+                    {
+                        "type": "array",
+                        "items": {
+                            "type": "int32",
+                            "optional": false
+                        },
+                        "optional": false,
+                        "field": "level2List2"
+                    }
+                ],
+                "optional": false,
+                "field": "level1Value3"
+            }
+        ],
+        "optional": false,
+        "name": "root"
+    },
+    "payload": {
+        "level1Value1": {
+            "level2Option1": null,
+            "level2Option2": null,
+            "level2Option3": [
+                {
+                    "level3Value6": "third",
+                    "level3Value7": "option"
+                }
+            ]
+        },
+        "level1Value2": {
+            "level2RepeatingItem1": null,
+            "level2RepeatingItem2": {
+                "level3Value6": "g",
+                "level3Value7": "h"
+            },
+            "level2RepeatingItem3": {
+                "level3Value6": "i",
+                "level3Value7": "j"
+            }
+        },
+        "level1Value3": {
+            "level2List1": [],
+            "level2List2": [
+                10,
+                20,
+                30
+            ]
+        }
+    }
+}

@@ -1,0 +1,19 @@
+apiVersion: eventstreams.ibm.com/v1beta2
+kind: KafkaConnector
+metadata:
+  name: stock-prices-xml
+  labels:
+    eventstreams.ibm.com/cluster: kafka-connect-cluster
+spec:
+  class: uk.co.dalelane.kafkaconnect.stockprices.StockPriceSourceConnector
+  tasksMax: 1
+  config:
+    key.converter: org.apache.kafka.connect.storage.StringConverter
+    key.converter.schemas.enable: false
+    value.converter: com.ibm.eventstreams.kafkaconnect.plugins.xml.XmlConverter
+    value.converter.schemas.enable: false
+
+    topic: STOCK.PRICES.IBM.XML
+    stock.symbol: IBM
+    delay.hours: 168
+    alpha.vantage.api.key: ${file:/opt/kafka/external-configuration/alphavantage:apikey}

@@ -1,0 +1,32 @@
+{
+    "schema": {
+        "type": "array",
+        "items": {
+            "type": "struct",
+            "fields": [
+                {
+                    "type": "string",
+                    "optional": false,
+                    "field": "message"
+                },
+                {
+                    "type": "int32",
+                    "optional": false,
+                    "field": "count"
+                }
+            ],
+            "optional": false
+        },
+        "optional": false
+    },
+    "payload": [
+        {
+            "message": "list of objects",
+            "count": 123
+        },
+        {
+            "message": "another object",
+            "count": 456
+        }
+    ]
+}

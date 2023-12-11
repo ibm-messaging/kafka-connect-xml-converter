@@ -1,0 +1,35 @@
+{
+    "schema": {
+        "type": "struct",
+        "fields": [
+            {
+                "type": "string",
+                "optional": false,
+                "field": "mystring"
+            },
+            {
+                "type": "string",
+                "optional": false,
+                "field": "onechar"
+            },
+            {
+                "type": "bytes",
+                "optional": false,
+                "field": "mybytes"
+            },
+            {
+                "type": "bytes",
+                "optional": false,
+                "field": "onebyte"
+            }
+        ],
+        "optional": false,
+        "name": "root"
+    },
+    "payload": {
+        "mystring": "Hello World",
+        "onechar": "H",
+        "mybytes": "SGVsbG8gV29ybGQ=",
+        "onebyte": "SA=="
+    }
+}

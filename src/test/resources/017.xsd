@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" id="connectSchema">
+    <xs:element name="root">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element maxOccurs="unbounded" name="maps" type="themap"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:complexType name="themap">
+        <xs:sequence>
+            <xs:element maxOccurs="unbounded" minOccurs="0" name="entry" type="themapentry"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="themapentry">
+        <xs:sequence>
+            <xs:element name="key" type="mapkey"/>
+            <xs:element name="value" type="mapvalue"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="mapkey">
+        <xs:sequence>
+            <xs:element name="keyA" type="xs:string" />
+            <xs:element name="keyB" type="xs:string" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="mapvalue">
+        <xs:sequence>
+            <xs:element name="valA" type="xs:string" />
+            <xs:element name="valB" type="xs:string" />
+        </xs:sequence>
+    </xs:complexType>
+
+</xs:schema>

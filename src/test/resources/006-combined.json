@@ -1,0 +1,93 @@
+{
+    "schema": {
+        "type": "struct",
+        "fields": [
+            {
+                "type": "struct",
+                "fields": [
+                    {
+                        "type": "string",
+                        "optional": false,
+                        "field": "test2"
+                    }
+                ],
+                "optional": false,
+                "field": "test1"
+            },
+            {
+                "type": "struct",
+                "fields": [
+                    {
+                        "type": "struct",
+                        "fields": [
+                            {
+                                "type": "array",
+                                "items": {
+                                    "type": "struct",
+                                    "fields": [
+                                        {
+                                            "type": "string",
+                                            "optional": false,
+                                            "field": "entry"
+                                        },
+                                        {
+                                            "type": "string",
+                                            "optional": true,
+                                            "field": "test6"
+                                        },
+                                        {
+                                            "type": "string",
+                                            "optional": true,
+                                            "field": "test7"
+                                        }
+                                    ],
+                                    "optional": false
+                                },
+                                "optional": false,
+                                "field": "test5"
+                            },
+                            {
+                                "type": "string",
+                                "optional": false,
+                                "field": "test4"
+                            }
+                        ],
+                        "optional": false,
+                        "field": "test3"
+                    }
+                ],
+                "optional": false,
+                "field": "outer"
+            }
+        ],
+        "optional": false,
+        "name": "root"
+    },
+    "payload": {
+        "test1": {
+            "test2": "one"
+        },
+        "outer": {
+            "test3": {
+                "test5": [
+                    {
+                        "entry": "test message",
+                        "test6": "three",
+                        "test7": null
+                    },
+                    {
+                        "entry": "next item",
+                        "test6": "four",
+                        "test7": null
+                    },
+                    {
+                        "entry": "final item",
+                        "test6": null,
+                        "test7": "five"
+                    }
+                ],
+                "test4": "two"
+            }
+        }
+    }
+}

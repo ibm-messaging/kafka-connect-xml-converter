@@ -1,0 +1,11 @@
+{
+    "product": {
+        "id": "ABCD1234",
+        "type": "Something impressive"
+    },
+    "value": 12.99,
+    "customer": {
+        "id": "XXXXYYYY",
+        "name": "Joe Bloggs"
+    }
+}

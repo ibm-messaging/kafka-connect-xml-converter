@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" id="connectSchema">
+    <xs:element name="root">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element maxOccurs="unbounded" minOccurs="0" name="entry" type="map"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:complexType name="map">
+        <xs:sequence>
+            <xs:element name="key" type="mapKey"/>
+            <xs:element name="value" type="xs:boolean" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="mapKey">
+        <xs:sequence>
+            <xs:element name="keyLetter" type="xs:string" />
+            <xs:element name="keyNumber" type="xs:integer" />
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>

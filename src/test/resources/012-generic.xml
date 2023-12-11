@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<root>
+    <one-of-the-maps>
+        <key1>value1</key1>
+        <key2>value2</key2>
+        <key3>value3</key3>
+    </one-of-the-maps>
+    <one-of-the-maps>
+        <keyA>valueA</keyA>
+        <keyB>valueB</keyB>
+    </one-of-the-maps>
+</root>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="#connectSchema">
+    <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" id="connectSchema">
+        <xs:element name="root">
+            <xs:complexType>
+                <xs:sequence>
+                    <xs:any maxOccurs="1" minOccurs="0" namespace="http://www.w3.org/2001/XMLSchema" processContents="skip" />
+
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="entry">
+                        <xs:complexType>
+                            <xs:sequence>
+                                <xs:element name="key">
+                                    <xs:complexType>
+                                        <xs:simpleContent>
+                                            <xs:extension base="xs:integer">
+                                                <xs:attribute name="keyNumber" type="xs:integer" />
+                                                <xs:attribute name="keyCount"  type="xs:integer" use="required"/>
+                                            </xs:extension>
+                                        </xs:simpleContent>
+                                    </xs:complexType>
+                                </xs:element>
+                                <xs:element name="value" type="mapValue">
+                                    <xs:complexType>
+                                        <xs:simpleContent>
+                                            <xs:extension base="xs:integer">
+                                                <xs:attribute name="valueNumber" type="xs:integer" use="required"/>
+                                            </xs:extension>
+                                        </xs:simpleContent>
+                                    </xs:complexType>
+                                </xs:element>
+                            </xs:sequence>
+                        </xs:complexType>
+                    </xs:element>
+                </xs:sequence>
+            </xs:complexType>
+        </xs:element>
+    </xs:schema>
+
+    <entry>
+        <key keyNumber="1" keyCount="10">100</key>
+        <value valueNumber="1000">10000</value>
+    </entry>
+    <entry>
+        <key keyNumber="2" keyCount="20">200</key>
+        <value valueNumber="2000">20000</value>
+    </entry>
+</root>

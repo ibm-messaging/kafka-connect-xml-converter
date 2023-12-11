@@ -1,0 +1,60 @@
+kind: ConfigMap
+apiVersion: v1
+metadata:
+  name: xml-schemas
+data:
+  mq-messages.xsd: |-
+    <?xml version="1.0" encoding="UTF-8"?>
+    <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+        <xs:element name="ordermessage">
+            <xs:complexType>
+                <xs:sequence>
+                    <xs:element name="customer" type="customerRecord"/>
+                    <xs:element name="product"  type="productRecord" maxOccurs="unbounded"/>
+                    <xs:element name="order"    type="orderRecord"/>
+                </xs:sequence>
+            </xs:complexType>
+        </xs:element>
+
+        <xs:complexType name="customerRecord">
+            <xs:sequence>
+                <xs:element name="name" type="xs:string"/>
+                <xs:element name="phone" type="phoneNumberRecord"/>
+                <xs:element name="email" type="xs:string"/>
+                <xs:element name="address" type="xs:string" minOccurs="0"/>
+                <xs:element name="postalZip" type="xs:string" minOccurs="0"/>
+                <xs:element name="region" type="xs:string" minOccurs="0"/>
+            </xs:sequence>
+        </xs:complexType>
+
+        <xs:complexType name="productRecord">
+            <xs:all>
+                <xs:element name="brand" type="xs:string"/>
+                <xs:element name="item" type="xs:string"/>
+                <xs:element name="quantity" type="xs:positiveInteger"/>
+            </xs:all>
+        </xs:complexType>
+
+        <xs:complexType name="orderRecord">
+            <xs:all>
+                <xs:element name="date" type="xs:string"/>
+            </xs:all>
+        </xs:complexType>
+
+        <xs:complexType name="phoneNumberRecord">
+            <xs:attribute name="type"   type="xs:string"/>
+            <xs:attribute name="number" type="xs:string"/>
+        </xs:complexType>
+    </xs:schema>
+  simple.xsd: |-
+    <?xml version="1.0" encoding="UTF-8"?>
+    <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+        <xs:element name="simple">
+            <xs:complexType>
+                <xs:sequence>
+                    <xs:element type="xs:string" name="message" />
+                    <xs:element type="xs:integer" name="count" minOccurs="0" />
+                </xs:sequence>
+            </xs:complexType>
+        </xs:element>
+    </xs:schema>

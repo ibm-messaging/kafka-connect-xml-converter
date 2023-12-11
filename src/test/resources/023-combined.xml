@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="#connectSchema">
+    <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" id="connectSchema">
+        <xs:element name="root">
+            <xs:complexType>
+                <xs:sequence>
+                    <xs:any maxOccurs="1" minOccurs="0" namespace="http://www.w3.org/2001/XMLSchema" processContents="skip" />
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="entry">
+                        <xs:complexType>
+                            <xs:sequence>
+                                <xs:element name="key" type="xs:integer" />
+                                <xs:element name="value" type="xs:integer" />
+                            </xs:sequence>
+                        </xs:complexType>
+                    </xs:element>
+                </xs:sequence>
+            </xs:complexType>
+        </xs:element>
+    </xs:schema>
+
+    <entry>
+        <key>1</key>
+        <value>10</value>
+    </entry>
+    <entry>
+        <key>2</key>
+        <value>20</value>
+    </entry>
+    <entry>
+        <key>3</key>
+        <value>30</value>
+    </entry>
+    <entry>
+        <key>4</key>
+        <value>40</value>
+    </entry>
+    <entry>
+        <key>5</key>
+        <value>50</value>
+    </entry>
+</root>

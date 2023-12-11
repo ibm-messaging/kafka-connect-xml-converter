@@ -1,0 +1,32 @@
+apiVersion: eventstreams.ibm.com/v1beta2
+kind: KafkaConnector
+metadata:
+  name: weather-xml
+  labels:
+    eventstreams.ibm.com/cluster: kafka-connect-cluster
+spec:
+  class: org.apache.camel.kafkaconnector.weather.CamelWeatherSourceConnector
+  tasksMax: 1
+  config:
+    key.converter: org.apache.kafka.connect.storage.StringConverter
+    key.converter.schemas.enable: false
+    value.converter: org.apache.kafka.connect.json.JsonConverter
+    value.converter.schemas.enable: false
+
+    transforms: xmlconvert,dropheaders
+
+    transforms.xmlconvert.type: com.ibm.eventstreams.kafkaconnect.plugins.xml.XmlTransformation
+    transforms.xmlconvert.converter.type: value
+    transforms.xmlconvert.root.element.name: current
+
+    transforms.dropheaders.type: org.apache.kafka.connect.transforms.DropHeaders
+    transforms.dropheaders.headers: CamelHeader.CamelWeatherQuery,CamelProperty.CamelToEndpoint
+
+    topics: WEATHER.IBM.HURSLEY
+
+    camel.source.endpoint.appid: ${file:/opt/kafka/external-configuration/weather:appid}
+    camel.source.endpoint.delay: 120000
+    camel.source.endpoint.lat: 51.02671210773644
+    camel.source.endpoint.lon: -1.3988643964483924
+    camel.source.endpoint.mode: XML
+    camel.source.path.name: unused

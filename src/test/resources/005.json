@@ -1,0 +1,12 @@
+{
+    "entry": [
+        {
+            "message": "list of objects",
+            "count": 123
+        },
+        {
+            "message": "another object",
+            "count": 456
+        }
+    ]
+}

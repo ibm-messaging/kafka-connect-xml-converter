@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <entry>
+        <message>list of objects</message>
+        <count>123</count>
+    </entry>
+    <entry>
+        <message>another object</message>
+        <count>456</count>
+    </entry>
+</root>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="#connectSchema">
+    <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" id="connectSchema">
+        <xs:element name="root">
+            <xs:complexType>
+                <xs:sequence>
+                    <xs:any processContents="skip" namespace="http://www.w3.org/2001/XMLSchema" minOccurs="0" maxOccurs="1"/>
+
+                    <xs:element name="test-1" type="xs:integer"/>
+                    <xs:element name="test-2" type="xs:float" />
+                    <xs:element name="test-3" type="xs:string" />
+                    <xs:element name="test-4" type="xs:boolean" />
+                </xs:sequence>
+            </xs:complexType>
+        </xs:element>
+    </xs:schema>
+
+    <test-1>123</test-1>
+    <test-2>1.23</test-2>
+    <test-3>xyz</test-3>
+    <test-4>true</test-4>
+</root>

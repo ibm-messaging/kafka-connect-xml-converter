@@ -1,0 +1,43 @@
+apiVersion: eventstreams.ibm.com/v1beta2
+kind: KafkaConnector
+metadata:
+  name: mq-xml-to-avro-confluent
+  labels:
+    eventstreams.ibm.com/cluster: kafka-connect-cluster
+spec:
+  class: com.ibm.eventstreams.connect.mqsource.MQSourceConnector
+  tasksMax: 1
+  config:
+    # the Kafka topic to produce to
+    topic: XML.MESSAGES.3
+
+    # the MQ queue to get messages from
+    mq.queue: XML.MESSAGES.3
+
+    # connection details for the queue manager
+    mq.queue.manager: MYQMGR
+    mq.connection.name.list: queuemanager-ibm-mq(1414)
+    mq.channel.name: KAFKA.SVRCONN
+
+    # format of the messages being parsed
+    mq.message.body.jms: true
+    mq.record.builder: com.ibm.eventstreams.kafkaconnect.plugins.xml.XmlMQRecordBuilder
+    mq.record.builder.root.element.name: ordermessage
+    mq.record.builder.xsd.schema.path: /opt/kafka/external-configuration/xml-schemas/mq-messages.xsd
+
+    # format of the messages to produce
+    key.converter: org.apache.kafka.connect.storage.StringConverter
+    key.converter.schemas.enable: false
+    value.converter: io.confluent.connect.avro.AvroConverter
+    value.converter.schemas.enable: true
+
+    # connection details for the schema registry to use
+    value.converter.schema.registry.url: https://my-kafka-cluster-ibm-es-ac-reg-external-event-automation.apps.dalelane.cp.fyre.ibm.com/apis/ccompat/v6
+    value.converter.basic.auth.credentials.source: USER_INFO
+    value.converter.basic.auth.user.info: kafka-connect-credentials:${file:/opt/kafka/connect-password/kafka-connect-credentials:password}
+    value.converter.schema.registry.ssl.truststore.type: PKCS12
+    value.converter.schema.registry.ssl.truststore.location: /opt/kafka/connect-certs/my-kafka-cluster-cluster-ca-cert/ca.p12
+    value.converter.schema.registry.ssl.truststore.password: ${file:/opt/kafka/connect-certs/my-kafka-cluster-cluster-ca-cert:ca.password}
+
+    # config for use of the schema registry
+    value.converter.auto.register.schemas: true

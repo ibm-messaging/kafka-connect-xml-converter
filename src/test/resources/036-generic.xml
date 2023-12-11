@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<root>
+    <entry>
+        <key>
+            <keyLetter>A</keyLetter>
+            <keyWord>APPLE</keyWord>
+            <keyString>TEST</keyString>
+            <keyOrdinal>first</keyOrdinal>
+        </key>
+        <value>
+            <valueLetter>a</valueLetter>
+            <valueWord>abacus</valueWord>
+            <valueString>TESTING</valueString>
+            <valueOrdinal>FIRST</valueOrdinal>
+        </value>
+    </entry>
+    <entry>
+        <key>
+            <keyLetter>C</keyLetter>
+            <keyWord>CABBAGE</keyWord>
+            <keyString>INPUT</keyString>
+            <keyOrdinal>second</keyOrdinal>
+        </key>
+        <value>
+            <valueLetter>c</valueLetter>
+            <valueWord>counting</valueWord>
+            <valueString>INPUTTING</valueString>
+            <valueOrdinal>SECOND</valueOrdinal>
+        </value>
+    </entry>
+</root>

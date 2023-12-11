@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="#connectSchema">
+    <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" id="connectSchema">
+        <xs:element name="root">
+            <xs:complexType>
+                <xs:sequence>
+                    <xs:any maxOccurs="1" minOccurs="0" namespace="http://www.w3.org/2001/XMLSchema" processContents="skip" />
+
+                    <xs:element maxOccurs="unbounded" name="maps">
+                        <xs:complexType>
+                            <xs:sequence>
+                                <xs:element maxOccurs="unbounded" name="entry">
+                                    <xs:complexType>
+                                        <xs:sequence>
+                                            <xs:element maxOccurs="unbounded" minOccurs="0" name="entry">
+                                                <xs:complexType>
+                                                    <xs:sequence>
+                                                        <xs:element name="key" type="xs:string" />
+                                                        <xs:element name="value" type="xs:float" />
+                                                    </xs:sequence>
+                                                </xs:complexType>
+                                            </xs:element>
+                                        </xs:sequence>
+                                    </xs:complexType>
+                                </xs:element>
+                            </xs:sequence>
+                        </xs:complexType>
+                    </xs:element>
+                </xs:sequence>
+            </xs:complexType>
+        </xs:element>
+    </xs:schema>
+
+    <maps>
+        <entry>
+            <entry>
+                <key>one point two</key>
+                <value>1.2</value>
+            </entry>
+            <entry>
+                <key>two point three</key>
+                <value>2.3</value>
+            </entry>
+            <entry>
+                <key>three point four</key>
+                <value>3.4</value>
+            </entry>
+        </entry>
+        <entry>
+            <entry>
+                <key>ten point five</key>
+                <value>10.5</value>
+            </entry>
+            <entry>
+                <key>eleven point seven</key>
+                <value>11.7</value>
+            </entry>
+        </entry>
+    </maps>
+    <maps>
+        <entry>
+            <entry>
+                <key>pi</key>
+                <value>3.14</value>
+            </entry>
+            <entry>
+                <key>half</key>
+                <value>0.5</value>
+            </entry>
+        </entry>
+        <entry>
+            <entry>
+                <key>first</key>
+                <value>1.1</value>
+            </entry>
+            <entry>
+                <key>second</key>
+                <value>2.2</value>
+            </entry>
+            <entry>
+                <key>third</key>
+                <value>3.3</value>
+            </entry>
+            <entry>
+                <key>fourth</key>
+                <value>4.4</value>
+            </entry>
+        </entry>
+    </maps>
+</root>

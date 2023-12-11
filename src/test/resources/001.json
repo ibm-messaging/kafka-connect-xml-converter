@@ -1,0 +1,28 @@
+{
+    "customer": {
+        "name": "Helen Velazquez",
+        "phone": {
+            "type": "landline",
+            "number": "0911 910 5491"
+        },
+        "email": "mus.donec.dignissim@yahoo.ca",
+        "address": "3249 Hendrerit Av.",
+        "postalZip": "F2 1IX",
+        "region": "Dunbartonshire"
+    },
+    "product": [
+        {
+            "brand": "Acme Inc",
+            "item": "Awesome-ivator",
+            "quantity": 1
+        },
+        {
+            "brand": "Globex",
+            "item": "Widget",
+            "quantity": 2
+        }
+    ],
+    "order": {
+        "date": "2023-11-05 22:11:00"
+    }
+}

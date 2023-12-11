@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="#connectSchema">
+    <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" id="connectSchema">
+        <xs:element name="root">
+            <xs:complexType>
+                <xs:sequence>
+                    <xs:any maxOccurs="1" minOccurs="0" namespace="http://www.w3.org/2001/XMLSchema" processContents="skip" />
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="entry">
+                        <xs:complexType>
+                            <xs:sequence>
+                                <xs:element name="key" type="xs:long" />
+                                <xs:element name="value">
+                                    <xs:complexType>
+                                        <xs:sequence>
+                                            <xs:element maxOccurs="unbounded" name="bools" type="xs:boolean" />
+                                            <xs:element name="score" type="xs:double" />
+                                        </xs:sequence>
+                                    </xs:complexType>
+                                </xs:element>
+                            </xs:sequence>
+                        </xs:complexType>
+                    </xs:element>
+                </xs:sequence>
+            </xs:complexType>
+        </xs:element>
+    </xs:schema>
+    <entry>
+        <key>3</key>
+        <value>
+            <bools>true</bools>
+            <bools>true</bools>
+            <score>3.456</score>
+        </value>
+    </entry>
+    <entry>
+        <key>9</key>
+        <value>
+            <bools>false</bools>
+            <bools>false</bools>
+            <score>9.887</score>
+        </value>
+    </entry>
+    <entry>
+        <key>100</key>
+        <value>
+            <bools>true</bools>
+            <bools>false</bools>
+            <score>100.00001</score>
+        </value>
+    </entry>
+</root>

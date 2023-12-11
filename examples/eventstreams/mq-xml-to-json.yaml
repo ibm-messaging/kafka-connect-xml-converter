@@ -1,0 +1,31 @@
+apiVersion: eventstreams.ibm.com/v1beta2
+kind: KafkaConnector
+metadata:
+  name: mq-xml-to-json
+  labels:
+    eventstreams.ibm.com/cluster: kafka-connect-cluster
+spec:
+  class: com.ibm.eventstreams.connect.mqsource.MQSourceConnector
+  tasksMax: 1
+  config:
+    # the Kafka topic to produce to
+    topic: XML.MESSAGES.1
+
+    # the MQ queue to get messages from
+    mq.queue: XML.MESSAGES.1
+
+    # connection details for the queue manager
+    mq.queue.manager: MYQMGR
+    mq.connection.name.list: queuemanager-ibm-mq(1414)
+    mq.channel.name: KAFKA.SVRCONN
+
+    # format of the messages being parsed
+    mq.message.body.jms: true
+    mq.record.builder: com.ibm.eventstreams.kafkaconnect.plugins.xml.XmlMQRecordBuilder
+    mq.record.builder.root.element.name: doc
+
+    # format of the messages to produce
+    key.converter: org.apache.kafka.connect.storage.StringConverter
+    key.converter.schemas.enable: false
+    value.converter: org.apache.kafka.connect.json.JsonConverter
+    value.converter.schemas.enable: false

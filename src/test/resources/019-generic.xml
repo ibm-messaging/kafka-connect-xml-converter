@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<root>
+    <entry>
+        <key>a</key>
+        <key>b</key>
+        <key>c</key>
+        <value>
+            <A>1</A>
+            <B>2</B>
+            <C>3</C>
+        </value>
+    </entry>
+    <entry>
+        <key>d</key>
+        <key>e</key>
+        <value>
+            <D>4</D>
+            <E>5</E>
+        </value>
+    </entry>
+</root>

@@ -1,0 +1,21 @@
+apiVersion: eventstreams.ibm.com/v1beta2
+kind: KafkaConnector
+metadata:
+  name: kafka-datagen-xml
+  labels:
+    eventstreams.ibm.com/cluster: kafka-connect-cluster
+spec:
+  class: com.ibm.eventautomation.demos.loosehangerjeans.DatagenSourceConnector
+  tasksMax: 1
+  config:
+    key.converter: org.apache.kafka.connect.storage.StringConverter
+    key.converter.schemas.enable: false
+    value.converter: com.ibm.eventstreams.kafkaconnect.plugins.xml.XmlConverter
+    value.converter.schemas.enable: false
+
+    topic.name.orders: ORDERS.NEW.XML
+    topic.name.cancellations: CANCELLATIONS.XML
+    topic.name.stockmovements: STOCK.MOVEMENT.XML
+    topic.name.badgeins: DOOR.BADGEIN.XML
+    topic.name.newcustomers: CUSTOMERS.NEW.XML
+    topic.name.sensorreadings: SENSOR.READINGS.XML

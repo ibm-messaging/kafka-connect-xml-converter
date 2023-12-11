@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="#connectSchema">
+    <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" id="connectSchema">
+        <xs:element name="root">
+            <xs:complexType>
+                <xs:sequence>
+                    <xs:any maxOccurs="1" minOccurs="0" namespace="http://www.w3.org/2001/XMLSchema"
+                        processContents="skip" />
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="entry">
+                        <xs:complexType>
+                            <xs:sequence>
+                                <xs:element maxOccurs="unbounded" name="key" type="xs:string" />
+                                <xs:element name="value">
+                                    <xs:complexType>
+                                        <xs:sequence>
+                                            <xs:element maxOccurs="unbounded" minOccurs="0"
+                                                name="entry">
+                                                <xs:complexType>
+                                                    <xs:sequence>
+                                                        <xs:element name="key" type="xs:string" />
+                                                        <xs:element name="value" type="xs:integer" />
+                                                    </xs:sequence>
+                                                </xs:complexType>
+                                            </xs:element>
+                                        </xs:sequence>
+                                    </xs:complexType>
+                                </xs:element>
+                            </xs:sequence>
+                        </xs:complexType>
+                    </xs:element>
+                </xs:sequence>
+            </xs:complexType>
+        </xs:element>
+    </xs:schema>
+    <entry>
+        <key>a</key>
+        <key>b</key>
+        <key>c</key>
+        <value>
+            <entry>
+                <key>A</key>
+                <value>1</value>
+            </entry>
+            <entry>
+                <key>B</key>
+                <value>2</value>
+            </entry>
+            <entry>
+                <key>C</key>
+                <value>3</value>
+            </entry>
+        </value>
+    </entry>
+    <entry>
+        <key>d</key>
+        <key>e</key>
+        <value>
+            <entry>
+                <key>D</key>
+                <value>4</value>
+            </entry>
+            <entry>
+                <key>E</key>
+                <value>5</value>
+            </entry>
+        </value>
+    </entry>
+</root>

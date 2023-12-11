@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<root>
+    <key0>
+        <valueLetter>aa</valueLetter>
+        <valueNumber>1</valueNumber>
+    </key0>
+    <key1>
+        <valueLetter>bb</valueLetter>
+        <valueNumber>2</valueNumber>
+    </key1>
+    <key2>
+        <valueLetter>cc</valueLetter>
+        <valueNumber>3</valueNumber>
+    </key2>
+</root>

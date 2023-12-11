@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="#connectSchema">
+    <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" id="connectSchema">
+        <xs:element name="root">
+            <xs:complexType>
+                <xs:sequence>
+                    <xs:any maxOccurs="1" minOccurs="0" namespace="http://www.w3.org/2001/XMLSchema" processContents="skip" />
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="entry">
+                        <xs:complexType>
+                            <xs:sequence>
+                                <xs:element name="key">
+                                    <xs:complexType>
+                                        <xs:sequence>
+                                            <xs:element name="keyLetter" type="xs:string" />
+                                            <xs:element name="keyNumber" type="xs:integer" />
+                                        </xs:sequence>
+                                    </xs:complexType>
+                                </xs:element>
+                                <xs:element maxOccurs="unbounded" name="value" type="xs:boolean" />
+                            </xs:sequence>
+                        </xs:complexType>
+                    </xs:element>
+                </xs:sequence>
+            </xs:complexType>
+        </xs:element>
+    </xs:schema>
+    <entry>
+        <key>
+            <keyLetter>AAA</keyLetter>
+            <keyNumber>123</keyNumber>
+        </key>
+        <value>true</value>
+        <value>false</value>
+        <value>true</value>
+    </entry>
+    <entry>
+        <key>
+            <keyLetter>BBB</keyLetter>
+            <keyNumber>456</keyNumber>
+        </key>
+        <value>false</value>
+        <value>true</value>
+    </entry>
+</root>

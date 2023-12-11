@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<root>
+    <entry>
+        <key>a</key>
+        <key>b</key>
+        <key>c</key>
+        <value>
+            <entry>
+                <key>A</key>
+                <value>1</value>
+            </entry>
+            <entry>
+                <key>B</key>
+                <value>2</value>
+            </entry>
+            <entry>
+                <key>C</key>
+                <value>3</value>
+            </entry>
+        </value>
+    </entry>
+    <entry>
+        <key>d</key>
+        <key>e</key>
+        <value>
+            <entry>
+                <key>D</key>
+                <value>4</value>
+            </entry>
+            <entry>
+                <key>E</key>
+                <value>5</value>
+            </entry>
+        </value>
+    </entry>
+</root>

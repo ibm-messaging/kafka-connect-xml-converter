@@ -1,0 +1,69 @@
+<?xml version = "1.0"?>
+<xs:schema xmlns:xs = "http://www.w3.org/2001/XMLSchema">
+    <xs:element name="root">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="type0" type="xs:anySimpleType"/>
+                <xs:element name="type1" type="xs:anyURI"/>
+                <xs:element name="type2" type="xs:base64Binary" />
+                <xs:element name="type3" type="xs:boolean" />
+                <xs:element name="type4" type="xs:date" />
+                <xs:element name="type5" type="xs:dateTime" />
+                <xs:element name="type6" type="xs:decimal" />
+                <xs:element name="type7" type="xs:double" />
+                <xs:element name="type8" type="xs:duration" />
+                <xs:element name="type9" type="xs:float" />
+                <xs:element name="type10" type="xs:gDay" />
+                <xs:element name="type11" type="xs:gMonth" />
+                <xs:element name="type12" type="xs:gMonthDay" />
+                <xs:element name="type13" type="xs:gYear" />
+                <xs:element name="type14" type="xs:gYearMonth" />
+                <xs:element name="type15" type="xs:hexBinary" />
+                <xs:element name="type17" type="xs:string" />
+                <xs:element name="type18" type="xs:time" />
+                <xs:element name="type19" type="xs:integer" />
+                <xs:element name="type20" type="xs:long" />
+                <xs:element name="type21" type="xs:int" />
+                <xs:element name="type22" type="xs:short" />
+                <xs:element name="type24" type="xs:nonNegativeInteger" />
+                <xs:element name="type25" type="xs:positiveInteger" />
+                <xs:element name="type26" type="xs:unsignedLong" />
+                <xs:element name="type27" type="xs:unsignedInt" />
+                <xs:element name="type28" type="xs:unsignedShort" />
+                <xs:element name="type30" type="xs:nonPositiveInteger" />
+                <xs:element name="type31" type="xs:negativeInteger" />
+                <xs:element name="type32" type="xs:normalizedString" />
+                <xs:element name="optType0" minOccurs="0" type="xs:anySimpleType"/>
+                <xs:element name="optType1" minOccurs="0" type="xs:anyURI"/>
+                <xs:element name="optType2" minOccurs="0" type="xs:base64Binary" />
+                <xs:element name="optType3" minOccurs="0" type="xs:boolean" />
+                <xs:element name="optType4" minOccurs="0" type="xs:date" />
+                <xs:element name="optType5" minOccurs="0" type="xs:dateTime" />
+                <xs:element name="optType6" minOccurs="0" type="xs:decimal" />
+                <xs:element name="optType7" minOccurs="0" type="xs:double" />
+                <xs:element name="optType8" minOccurs="0" type="xs:duration" />
+                <xs:element name="optType9" minOccurs="0" type="xs:float" />
+                <xs:element name="optType10" minOccurs="0" type="xs:gDay" />
+                <xs:element name="optType11" minOccurs="0" type="xs:gMonth" />
+                <xs:element name="optType12" minOccurs="0" type="xs:gMonthDay" />
+                <xs:element name="optType13" minOccurs="0" type="xs:gYear" />
+                <xs:element name="optType14" minOccurs="0" type="xs:gYearMonth" />
+                <xs:element name="optType15" minOccurs="0" type="xs:hexBinary" />
+                <xs:element name="optType17" minOccurs="0" type="xs:string" />
+                <xs:element name="optType18" minOccurs="0" type="xs:time" />
+                <xs:element name="optType19" minOccurs="0" type="xs:integer" />
+                <xs:element name="optType20" minOccurs="0" type="xs:long" />
+                <xs:element name="optType21" minOccurs="0" type="xs:int" />
+                <xs:element name="optType22" minOccurs="0" type="xs:short" />
+                <xs:element name="optType24" minOccurs="0" type="xs:nonNegativeInteger" />
+                <xs:element name="optType25" minOccurs="0" type="xs:positiveInteger" />
+                <xs:element name="optType26" minOccurs="0" type="xs:unsignedLong" />
+                <xs:element name="optType27" minOccurs="0" type="xs:unsignedInt" />
+                <xs:element name="optType28" minOccurs="0" type="xs:unsignedShort" />
+                <xs:element name="optType30" minOccurs="0" type="xs:nonPositiveInteger" />
+                <xs:element name="optType31" minOccurs="0" type="xs:negativeInteger" />
+                <xs:element name="optType32" minOccurs="0" type="xs:normalizedString" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

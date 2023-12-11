@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<root>
+    <item1 key1="itemKey1" key2="itemKey2">
+        <value1 key3="itemValue3" key4="itemValue4"/>
+        <value2 key5="itemValue5" key6="itemValue6">VALUE TWO</value2>
+        <value3 key7="itemValue7" key8="itemValue8">
+            <inner>INNER</inner>
+        </value3>
+        <value4 key9="itemValue9" key10="itemValue10">
+            <inside>INSIDE</inside>
+            <inside>OUT</inside>
+        </value4>
+        <value5 key11="itemValue11" key12="itemValue12">
+            <key13>itemValue13</key13>
+            <key14>itemValue14</key14>
+        </value5>
+        <value6 key15="itemValue15" key16="itemValue16">
+            <key17>list17ItemONE</key17>
+            <key17>list17ItemTWO</key17>
+            <key17>list17ItemTHREE</key17>
+            <key18>itemValue18</key18>
+            <key19>itemValue19</key19>
+        </value6>
+    </item1>
+</root>

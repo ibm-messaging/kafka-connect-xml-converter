@@ -1,0 +1,46 @@
+apiVersion: eventstreams.ibm.com/v1beta2
+kind: KafkaConnector
+metadata:
+  name: http-json-to-xml
+  labels:
+    eventstreams.ibm.com/cluster: kafka-connect-cluster
+spec:
+  class: io.aiven.kafka.connect.http.HttpSinkConnector
+  tasksMax: 1
+  config:
+    # the Kafka topic to consume from
+    topics: TEST.MESSAGES
+
+    # transform the JSON message contents to match the web service API before converting to XML
+    transforms: drop,insert,rename,xmlconvert
+    # remove one of the properties
+    transforms.drop.type: org.apache.kafka.connect.transforms.ReplaceField$Value
+    transforms.drop.blacklist: customer
+    # insert a new property
+    transforms.insert.type: org.apache.kafka.connect.transforms.InsertField$Value
+    transforms.insert.static.field: origin
+    transforms.insert.static.value: demo
+    # rename one of the properties
+    transforms.rename.type: org.apache.kafka.connect.transforms.ReplaceField$Value
+    transforms.rename.renames: value:cost
+    # convert the results into an XML string
+    transforms.xmlconvert.type: com.ibm.eventstreams.kafkaconnect.plugins.xml.XmlTransformation
+    transforms.xmlconvert.converter.type: value
+    transforms.xmlconvert.root.element.name: request
+
+    # web service to submit the XML payload to
+    http.url: http://test-web-service-event-automation.apps.dalelane.cp.fyre.ibm.com/api/webhooks/001
+    http.authorization.type: none
+    http.headers.content.type: text/xml
+
+    # format of the messages to produce
+    mq.message.body.jms: true
+    mq.message.builder: com.ibm.eventstreams.connect.mqsink.builders.ConverterMessageBuilder
+    mq.message.builder.value.converter: com.ibm.eventstreams.kafkaconnect.plugins.xml.XmlConverter
+    mq.message.builder.value.converter.root.element.name: msg
+
+    # format of the messages to consume
+    key.converter: org.apache.kafka.connect.storage.StringConverter
+    key.converter.schemas.enable: false
+    value.converter: org.apache.kafka.connect.json.JsonConverter
+    value.converter.schemas.enable: false

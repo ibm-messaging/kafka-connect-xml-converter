@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="#connectSchema">
+    <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" id="connectSchema">
+        <xs:element name="root">
+            <xs:complexType>
+                <xs:sequence>
+                    <xs:any maxOccurs="1" minOccurs="0" namespace="http://www.w3.org/2001/XMLSchema" processContents="skip" />
+
+                    <xs:element name="optString1" type="xs:string" minOccurs="0" maxOccurs="1" />
+                    <xs:element name="string1"    type="xs:string" />
+                    <xs:element name="optString2" type="xs:string" minOccurs="0" maxOccurs="1" />
+                    <xs:element name="string2"    type="xs:string" />
+                    <xs:element name="optString3" type="xs:string" minOccurs="0" maxOccurs="1" />
+                </xs:sequence>
+            </xs:complexType>
+        </xs:element>
+    </xs:schema>
+
+    <string1>ONE</string1>
+    <optString2>two</optString2>
+    <string2>TWO</string2>
+    <optString3/>
+</root>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<root>
+    <customer>
+        <name>Helen Velazquez</name>
+        <phone>
+            <type>landline</type>
+            <number>0911 910 5491</number>
+        </phone>
+        <email>mus.donec.dignissim@yahoo.ca</email>
+        <address>3249 Hendrerit Av.</address>
+        <postalZip>F2 1IX</postalZip>
+        <region>Dunbartonshire</region>
+    </customer>
+    <product>
+        <brand>Acme Inc</brand>
+        <item>Awesome-ivator</item>
+        <quantity>1</quantity>
+    </product>
+    <product>
+        <brand>Globex</brand>
+        <item>Widget</item>
+        <quantity>2</quantity>
+    </product>
+    <order>
+        <date>2023-11-05 22:11:00</date>
+    </order>
+</root>

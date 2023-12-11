@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="#connectSchema">
+    <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" id="connectSchema">
+        <xs:element name="root">
+            <xs:complexType>
+                <xs:sequence>
+                    <xs:any maxOccurs="1" minOccurs="0" namespace="http://www.w3.org/2001/XMLSchema" processContents="skip" />
+
+                    <xs:element type="xs:integer" name="mostly-numbers" maxOccurs="unbounded" minOccurs="0"/>
+                </xs:sequence>
+            </xs:complexType>
+        </xs:element>
+    </xs:schema>
+
+    <mostly-numbers>1</mostly-numbers>
+    <mostly-numbers>4</mostly-numbers>
+    <mostly-numbers>7</mostly-numbers>
+    <mostly-numbers />
+    <mostly-numbers>13</mostly-numbers>
+    <mostly-numbers>16</mostly-numbers>
+</root>

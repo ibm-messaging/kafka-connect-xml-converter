@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<root>
+    <maps>
+        <entry>
+            <entry>
+                <key>one point two</key>
+                <value>1.2</value>
+            </entry>
+            <entry>
+                <key>two point three</key>
+                <value>2.3</value>
+            </entry>
+            <entry>
+                <key>three point four</key>
+                <value>3.4</value>
+            </entry>
+        </entry>
+        <entry>
+            <entry>
+                <key>ten point five</key>
+                <value>10.5</value>
+            </entry>
+            <entry>
+                <key>eleven point seven</key>
+                <value>11.7</value>
+            </entry>
+        </entry>
+    </maps>
+    <maps>
+        <entry>
+            <pi>3.14</pi>
+            <half>0.5</half>
+        </entry>
+        <entry>
+            <first>1.1</first>
+            <second>2.2</second>
+            <third>3.3</third>
+            <fourth>4.4</fourth>
+        </entry>
+    </maps>
+</root>

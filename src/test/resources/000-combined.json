@@ -1,0 +1,35 @@
+{
+    "schema": {
+        "type": "struct",
+        "fields": [
+            {
+                "type": "int32",
+                "optional": false,
+                "field": "test-1"
+            },
+            {
+                "type": "float",
+                "optional": false,
+                "field": "test-2"
+            },
+            {
+                "type": "string",
+                "optional": false,
+                "field": "test-3"
+            },
+            {
+                "type": "boolean",
+                "optional": false,
+                "field": "test-4"
+            }
+        ],
+        "optional": false,
+        "name": "root"
+    },
+    "payload": {
+        "test-1": 123,
+        "test-2": 1.23,
+        "test-3": "xyz",
+        "test-4": true
+    }
+}

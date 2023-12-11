@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="root">
+        <xs:complexType>
+            <xs:all>
+                <xs:element name="test1" type="test1Item"/>
+                <xs:element name="outer" type="outerItem"/>
+            </xs:all>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:complexType name="test1Item">
+        <xs:attribute type="xs:stringlike" name="test2" use="required"/>
+    </xs:complexType>
+
+    <xs:complexType name="outerItem">
+        <xs:sequence>
+            <xs:element name="test3" type="test3Item"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="test3Item">
+        <xs:sequence>
+            <xs:element name="test5" type="test5Item" maxOccurs="unbounded" />
+        </xs:sequence>
+        <xs:attribute name="test4" type="xs:string" use="required"/>
+    </xs:complexType>
+
+    <xs:complexType name="test5Item">
+        <xs:simpleContent>
+            <xs:extension base="xs:string">
+                <xs:attribute type="xs:string" name="test6" />
+                <xs:attribute type="xs:string" name="test7" />
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+</xs:schema>

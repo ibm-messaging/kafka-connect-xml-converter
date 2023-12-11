@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="#connectSchema">
+    <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" id="connectSchema">
+        <xs:element name="root">
+            <xs:complexType>
+                <xs:sequence>
+                    <xs:any processContents="skip" namespace="http://www.w3.org/2001/XMLSchema" minOccurs="0" maxOccurs="1"/>
+
+                    <xs:element name="entry" maxOccurs="unbounded">
+                        <xs:complexType>
+                            <xs:sequence>
+                                <xs:element name="message" type="xs:string" />
+                                <xs:element name="count" type="xs:integer" />
+                            </xs:sequence>
+                        </xs:complexType>
+                    </xs:element>
+                </xs:sequence>
+            </xs:complexType>
+        </xs:element>
+    </xs:schema>
+
+    <entry>
+        <message>list of objects</message>
+        <count>123</count>
+    </entry>
+    <entry>
+        <message>another object</message>
+        <count>456</count>
+    </entry>
+</root>

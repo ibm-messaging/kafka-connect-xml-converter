@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <entry>
+        <key>3</key>
+        <value>
+            <bools>true</bools>
+            <bools>true</bools>
+            <score>3.456</score>
+        </value>
+    </entry>
+    <entry>
+        <key>9</key>
+        <value>
+            <bools>false</bools>
+            <bools>false</bools>
+            <score>9.887</score>
+        </value>
+    </entry>
+    <entry>
+        <key>100</key>
+        <value>
+            <bools>true</bools>
+            <bools>false</bools>
+            <score>100.00001</score>
+        </value>
+    </entry>
+</root>

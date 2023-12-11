@@ -1,0 +1,17 @@
+{
+    "schema": {
+        "type": "struct",
+        "fields": [
+            {
+                "type": "double",
+                "optional": false,
+                "field": "test"
+            }
+        ],
+        "optional": false,
+        "name": "root"
+    },
+    "payload": {
+        "test": 1.23123123123123
+    }
+}

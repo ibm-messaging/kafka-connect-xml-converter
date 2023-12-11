@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" id="connectSchema">
+    <xs:element name="root">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="item1" type="item1"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:complexType name="item1">
+        <xs:sequence>
+            <xs:element name="value1"  type="value1" />
+            <xs:element name="value2"  type="value2" />
+            <xs:element name="value3"  type="value3" />
+            <xs:element name="value4"  type="value4" />
+            <xs:element name="value5"  type="value5" />
+            <xs:element name="value6"  type="value6" />
+        </xs:sequence>
+        <xs:attribute name="key1" type="xs:string" use="required"/>
+        <xs:attribute name="key2" type="xs:string" use="required"/>
+    </xs:complexType>
+
+    <xs:complexType name="value1">
+        <xs:attribute name="key3" type="xs:string" use="required"/>
+        <xs:attribute name="key4" type="xs:string" use="required"/>
+    </xs:complexType>
+
+    <xs:complexType name="value2">
+        <xs:simpleContent>
+            <xs:extension base="xs:string">
+                <xs:attribute name="key5" type="xs:string" use="required"/>
+                <xs:attribute name="key6" type="xs:string" use="required"/>
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+
+    <xs:complexType name="value3">
+        <xs:sequence>
+            <xs:element name="inner"  type="xs:string" />
+        </xs:sequence>
+        <xs:attribute name="key7" type="xs:string" use="required"/>
+        <xs:attribute name="key8" type="xs:string" use="required"/>
+    </xs:complexType>
+
+    <xs:complexType name="value4">
+        <xs:sequence>
+            <xs:element name="inside"  type="xs:string" maxOccurs="unbounded" />
+        </xs:sequence>
+        <xs:attribute name="key9"  type="xs:string" use="required"/>
+        <xs:attribute name="key10" type="xs:string" use="required"/>
+    </xs:complexType>
+
+    <xs:complexType name="value5">
+        <xs:sequence>
+            <xs:element name="key13" type="xs:string" />
+            <xs:element name="key14" type="xs:string" />
+        </xs:sequence>
+        <xs:attribute name="key11" type="xs:string" use="required"/>
+        <xs:attribute name="key12" type="xs:string" use="required"/>
+    </xs:complexType>
+
+    <xs:complexType name="value6">
+        <xs:sequence>
+            <xs:element name="key17" type="xs:string" maxOccurs="unbounded" />
+            <xs:element name="key18" type="xs:string" />
+            <xs:element name="key19" type="xs:string" />
+        </xs:sequence>
+        <xs:attribute name="key15" type="xs:string" use="required"/>
+        <xs:attribute name="key16" type="xs:string" use="required"/>
+    </xs:complexType>
+
+</xs:schema>

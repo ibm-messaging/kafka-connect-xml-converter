@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="#connectSchema">
+    <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" id="connectSchema">
+        <xs:element name="root">
+            <xs:complexType>
+                <xs:sequence>
+                    <xs:any maxOccurs="1" minOccurs="0" namespace="http://www.w3.org/2001/XMLSchema" processContents="skip" />
+
+                    <xs:element name="item1">
+                        <xs:complexType>
+                            <xs:sequence>
+                                <xs:element name="value1">
+                                    <xs:complexType>
+                                        <xs:attribute name="key3" type="xs:string" use="required"/>
+                                        <xs:attribute name="key4" type="xs:string" use="required"/>
+                                    </xs:complexType>
+                                </xs:element>
+                                <xs:element name="value2">
+                                    <xs:complexType>
+                                        <xs:simpleContent>
+                                            <xs:extension base="xs:string">
+                                                <xs:attribute name="key5" type="xs:string" use="required"/>
+                                                <xs:attribute name="key6" type="xs:string" use="required"/>
+                                            </xs:extension>
+                                        </xs:simpleContent>
+                                    </xs:complexType>
+                                </xs:element>
+                                <xs:element name="value3">
+                                    <xs:complexType>
+                                        <xs:sequence>
+                                            <xs:element name="inner"  type="xs:string" />
+                                        </xs:sequence>
+                                        <xs:attribute name="key7" type="xs:string" use="required"/>
+                                        <xs:attribute name="key8" type="xs:string" use="required"/>
+                                    </xs:complexType>
+                                </xs:element>
+                                <xs:element name="value4">
+                                    <xs:complexType>
+                                        <xs:sequence>
+                                            <xs:element name="inside"  type="xs:string" maxOccurs="unbounded" />
+                                        </xs:sequence>
+                                        <xs:attribute name="key9"  type="xs:string" use="required"/>
+                                        <xs:attribute name="key10" type="xs:string" use="required"/>
+                                    </xs:complexType>
+                                </xs:element>
+                                <xs:element name="value5">
+                                    <xs:complexType>
+                                        <xs:sequence>
+                                            <xs:element name="key13" type="xs:string" />
+                                            <xs:element name="key14" type="xs:string" />
+                                        </xs:sequence>
+                                        <xs:attribute name="key11" type="xs:string" use="required"/>
+                                        <xs:attribute name="key12" type="xs:string" use="required"/>
+                                    </xs:complexType>
+                                </xs:element>
+                                <xs:element name="value6">
+                                    <xs:complexType>
+                                        <xs:sequence>
+                                            <xs:element name="key17" type="xs:string" maxOccurs="unbounded" />
+                                            <xs:element name="key18" type="xs:string" />
+                                            <xs:element name="key19" type="xs:string" />
+                                        </xs:sequence>
+                                        <xs:attribute name="key15" type="xs:string" use="required"/>
+                                        <xs:attribute name="key16" type="xs:string" use="required"/>
+                                    </xs:complexType>
+                                </xs:element>
+                            </xs:sequence>
+                            <xs:attribute name="key1" type="xs:string" use="required"/>
+                            <xs:attribute name="key2" type="xs:string" use="required"/>
+                        </xs:complexType>
+                    </xs:element>
+                </xs:sequence>
+            </xs:complexType>
+        </xs:element>
+    </xs:schema>
+
+    <item1 key1="itemKey1" key2="itemKey2">
+        <value1 key3="itemValue3" key4="itemValue4"/>
+        <value2 key5="itemValue5" key6="itemValue6">VALUE TWO</value2>
+        <value3 key7="itemValue7" key8="itemValue8">
+            <inner>INNER</inner>
+        </value3>
+        <value4 key9="itemValue9" key10="itemValue10">
+            <inside>INSIDE</inside>
+            <inside>OUT</inside>
+        </value4>
+        <value5 key11="itemValue11" key12="itemValue12">
+            <key13>itemValue13</key13>
+            <key14>itemValue14</key14>
+        </value5>
+        <value6 key15="itemValue15" key16="itemValue16">
+            <key17>list17ItemONE</key17>
+            <key17>list17ItemTWO</key17>
+            <key17>list17ItemTHREE</key17>
+            <key18>itemValue18</key18>
+            <key19>itemValue19</key19>
+        </value6>
+    </item1>
+</root>

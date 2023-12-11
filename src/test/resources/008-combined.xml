@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="#connectSchema">
+    <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" id="connectSchema">
+        <xs:element name="root">
+            <xs:complexType>
+                <xs:sequence>
+                    <xs:any processContents="skip" namespace="http://www.w3.org/2001/XMLSchema" minOccurs="0" maxOccurs="1"/>
+
+                    <xs:element name="level1Value1">
+                        <xs:complexType>
+                            <xs:choice>
+                                <xs:element name="level2Option1">
+                                    <xs:complexType>
+                                        <xs:all>
+                                            <xs:element name="level3Value1" type="xs:string" minOccurs="0"/>
+                                            <xs:element name="level3Value2" type="xs:string" />
+                                            <xs:element name="level3Value3" type="xs:integer" />
+                                        </xs:all>
+                                    </xs:complexType>
+                                </xs:element>
+                                <xs:element name="level2Option2">
+                                    <xs:complexType>
+                                        <xs:sequence>
+                                            <xs:element name="level3Value4" type="xs:boolean" />
+                                            <xs:element name="level3Value5" type="xs:double" />
+                                        </xs:sequence>
+                                    </xs:complexType>
+                                </xs:element>
+                                <xs:element name="level2Option3" maxOccurs="unbounded">
+                                    <xs:complexType>
+                                        <xs:all>
+                                            <xs:element name="level3Value6" type="xs:string"/>
+                                            <xs:element name="level3Value7" type="xs:string"/>
+                                        </xs:all>
+                                    </xs:complexType>
+                                </xs:element>
+                            </xs:choice>
+                        </xs:complexType>
+                    </xs:element>
+                    <xs:element name="level1Value2" minOccurs="0">
+                        <xs:complexType>
+                            <xs:all>
+                                <xs:element name="level2RepeatingItem1" minOccurs="0">
+                                    <xs:complexType>
+                                        <xs:all>
+                                            <xs:element name="level3Value6" type="xs:string"/>
+                                            <xs:element name="level3Value7" type="xs:string"/>
+                                        </xs:all>
+                                    </xs:complexType>
+                                </xs:element>
+                                <xs:element name="level2RepeatingItem2">
+                                    <xs:complexType>
+                                        <xs:all>
+                                            <xs:element name="level3Value6" type="xs:string"/>
+                                            <xs:element name="level3Value7" type="xs:string"/>
+                                        </xs:all>
+                                    </xs:complexType>
+                                </xs:element>
+                                <xs:element name="level2RepeatingItem3">
+                                    <xs:complexType>
+                                        <xs:all>
+                                            <xs:element name="level3Value6" type="xs:string"/>
+                                            <xs:element name="level3Value7" type="xs:string"/>
+                                        </xs:all>
+                                    </xs:complexType>
+                                </xs:element>
+                            </xs:all>
+                        </xs:complexType>
+                    </xs:element>
+                    <xs:element name="level1Value3">
+                        <xs:complexType>
+                            <xs:sequence>
+                                <xs:element name="level2List1" maxOccurs="unbounded" type="xs:string" minOccurs="0"/>
+                                <xs:element name="level2List2" maxOccurs="unbounded" type="xs:integer"/>
+                            </xs:sequence>
+                        </xs:complexType>
+                    </xs:element>
+                </xs:sequence>
+            </xs:complexType>
+        </xs:element>
+    </xs:schema>
+
+    <level1Value1>
+        <level2Option3>
+            <level3Value6>third</level3Value6>
+            <level3Value7>option</level3Value7>
+        </level2Option3>
+    </level1Value1>
+
+    <level1Value2>
+        <level2RepeatingItem2>
+            <level3Value6>g</level3Value6>
+            <level3Value7>h</level3Value7>
+        </level2RepeatingItem2>
+        <level2RepeatingItem3>
+            <level3Value6>i</level3Value6>
+            <level3Value7>j</level3Value7>
+        </level2RepeatingItem3>
+    </level1Value2>
+
+    <level1Value3>
+        <level2List2>10</level2List2>
+        <level2List2>20</level2List2>
+        <level2List2>30</level2List2>
+    </level1Value3>
+</root>

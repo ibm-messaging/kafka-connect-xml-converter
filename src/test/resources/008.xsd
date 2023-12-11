@@ -1,0 +1,51 @@
+<?xml version = "1.0"?>
+<xs:schema xmlns:xs = "http://www.w3.org/2001/XMLSchema">
+    <xs:element name="root">
+        <xs:complexType>
+            <xs:all>
+                <xs:element name="level1Value1" type="value1" />
+                <xs:element name="level1Value2" type="value2" minOccurs="0"/>
+                <xs:element name="level1Value3" type="value3" />
+            </xs:all>
+        </xs:complexType>
+    </xs:element>
+    <xs:complexType name="value1">
+        <xs:choice>
+            <xs:element name="level2Option1" type="option1"/>
+            <xs:element name="level2Option2" type="option2"/>
+            <xs:element name="level2Option3" type="repeatingItem" maxOccurs="unbounded"/>
+        </xs:choice>
+    </xs:complexType>
+    <xs:complexType name="option1">
+        <xs:all>
+            <xs:element name="level3Value1" type="xs:string" minOccurs="0"/>
+            <xs:element name="level3Value2" type="xs:string" />
+            <xs:element name="level3Value3" type="xs:integer" />
+        </xs:all>
+    </xs:complexType>
+    <xs:complexType name="option2">
+        <xs:sequence>
+            <xs:element name="level3Value4" type="xs:boolean" />
+            <xs:element name="level3Value5" type="xs:double" />
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="value2">
+        <xs:all>
+            <xs:element name="level2RepeatingItem1" type="repeatingItem" minOccurs="0"/>
+            <xs:element name="level2RepeatingItem2" type="repeatingItem" />
+            <xs:element name="level2RepeatingItem3" type="repeatingItem" />
+        </xs:all>
+    </xs:complexType>
+    <xs:complexType name="repeatingItem">
+        <xs:all>
+            <xs:element name="level3Value6" type="xs:string"/>
+            <xs:element name="level3Value7" type="xs:string"/>
+        </xs:all>
+    </xs:complexType>
+    <xs:complexType name="value3">
+        <xs:sequence>
+            <xs:element name="level2List1" maxOccurs="unbounded" type="xs:string" minOccurs="0"/>
+            <xs:element name="level2List2" maxOccurs="unbounded" type="xs:integer"/>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>

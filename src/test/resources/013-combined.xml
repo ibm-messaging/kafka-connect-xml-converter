@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="#connectSchema">
+    <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" id="connectSchema">
+        <xs:element name="root">
+            <xs:complexType>
+                <xs:sequence>
+                    <xs:any processContents="skip" namespace="http://www.w3.org/2001/XMLSchema" minOccurs="0" maxOccurs="1" />
+                    <xs:element maxOccurs="unbounded" name="test">
+                        <xs:complexType>
+                            <xs:sequence>
+                                <xs:element maxOccurs="unbounded" name="entry">
+                                    <xs:complexType>
+                                        <xs:sequence>
+                                            <xs:element maxOccurs="unbounded" name="entry">
+                                                <xs:complexType>
+                                                    <xs:sequence>
+                                                        <xs:element maxOccurs="unbounded" name="entry">
+                                                            <xs:complexType>
+                                                                <xs:sequence>
+                                                                    <xs:element maxOccurs="unbounded" name="entry" type="xs:integer" />
+                                                                </xs:sequence>
+                                                            </xs:complexType>
+                                                        </xs:element>
+                                                    </xs:sequence>
+                                                </xs:complexType>
+                                            </xs:element>
+                                        </xs:sequence>
+                                    </xs:complexType>
+                                </xs:element>
+                            </xs:sequence>
+                        </xs:complexType>
+                    </xs:element>
+                </xs:sequence>
+            </xs:complexType>
+        </xs:element>
+    </xs:schema>
+
+    <test>
+        <entry>
+            <entry>
+                <entry>
+                    <entry>123</entry>
+                    <entry>234</entry>
+                </entry>
+                <entry>
+                    <entry>456</entry>
+                    <entry>678</entry>
+                </entry>
+            </entry>
+            <entry>
+                <entry>
+                    <entry>890</entry>
+                    <entry>901</entry>
+                </entry>
+                <entry>
+                    <entry>12</entry>
+                    <entry>23</entry>
+                </entry>
+            </entry>
+        </entry>
+        <entry>
+            <entry>
+                <entry>
+                    <entry>34</entry>
+                    <entry>45</entry>
+                </entry>
+                <entry>
+                    <entry>56</entry>
+                    <entry>67</entry>
+                </entry>
+            </entry>
+            <entry>
+                <entry>
+                    <entry>78</entry>
+                    <entry>89</entry>
+                </entry>
+                <entry>
+                    <entry>90</entry>
+                    <entry>11</entry>
+                </entry>
+            </entry>
+        </entry>
+    </test>
+    <test>
+        <entry>
+            <entry>
+                <entry>
+                    <entry>22</entry>
+                    <entry>33</entry>
+                </entry>
+                <entry>
+                    <entry>44</entry>
+                    <entry>55</entry>
+                </entry>
+            </entry>
+            <entry>
+                <entry>
+                    <entry>66</entry>
+                    <entry>77</entry>
+                </entry>
+                <entry>
+                    <entry>88</entry>
+                    <entry>99</entry>
+                </entry>
+            </entry>
+        </entry>
+        <entry>
+            <entry>
+                <entry>
+                    <entry>111</entry>
+                    <entry>222</entry>
+                </entry>
+                <entry>
+                    <entry>333</entry>
+                    <entry>444</entry>
+                </entry>
+            </entry>
+            <entry>
+                <entry>
+                    <entry>555</entry>
+                    <entry>666</entry>
+                </entry>
+                <entry>
+                    <entry>777</entry>
+                    <entry>888</entry>
+                </entry>
+            </entry>
+        </entry>
+    </test>
+</root>

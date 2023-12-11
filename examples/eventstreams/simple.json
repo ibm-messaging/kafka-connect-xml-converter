@@ -1,0 +1,8 @@
+{
+    "test": {
+        "numbers": [ 10, 20, 30 ],
+        "letters": [ "A", "B", "C" ],
+        "message": "Hello World"
+    },
+    "creative": false
+}

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="#connectSchema">
+    <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" id="connectSchema">
+        <xs:element name="root">
+            <xs:complexType>
+                <xs:sequence>
+                    <xs:any processContents="skip" namespace="http://www.w3.org/2001/XMLSchema" minOccurs="0" maxOccurs="1"/>
+
+                    <xs:element name="lists">
+                        <xs:complexType>
+                            <xs:sequence>
+                                <xs:element name="strings" type="xs:string" maxOccurs="unbounded" />
+                                <xs:element name="floats" type="xs:float" maxOccurs="unbounded" />
+                                <xs:element name="doubles" type="xs:double" maxOccurs="unbounded" />
+                                <xs:element name="shorts" type="xs:short" maxOccurs="unbounded" />
+                                <xs:element name="ints" type="xs:integer" maxOccurs="unbounded" />
+                                <xs:element name="longs" type="xs:long" maxOccurs="unbounded" />
+                                <xs:element name="booleans" type="xs:boolean" maxOccurs="unbounded" />
+                            </xs:sequence>
+                        </xs:complexType>
+                    </xs:element>
+                    <xs:element name="items">
+                        <xs:complexType>
+                            <xs:sequence>
+                                <xs:element name="string" type="xs:string" />
+                                <xs:element name="float" type="xs:float" />
+                                <xs:element name="double" type="xs:double" />
+                                <xs:element name="short" type="xs:short" />
+                                <xs:element name="int" type="xs:integer" />
+                                <xs:element name="long" type="xs:long" />
+                                <xs:element name="boolean" type="xs:boolean" />
+                            </xs:sequence>
+                        </xs:complexType>
+                    </xs:element>
+                    <xs:element name="optionals">
+                        <xs:complexType>
+                            <xs:sequence>
+                                <xs:element name="string" type="xs:string" minOccurs="0" maxOccurs="1" />
+                                <xs:element name="float" type="xs:float" minOccurs="0" maxOccurs="1" />
+                                <xs:element name="double" type="xs:double" minOccurs="0" maxOccurs="1" />
+                                <xs:element name="short" type="xs:short" minOccurs="0" maxOccurs="1" />
+                                <xs:element name="int" type="xs:integer" minOccurs="0" maxOccurs="1" />
+                                <xs:element name="long" type="xs:long" minOccurs="0" maxOccurs="1" />
+                                <xs:element name="boolean" type="xs:boolean" minOccurs="0" maxOccurs="1" />
+                            </xs:sequence>
+                        </xs:complexType>
+                    </xs:element>
+                </xs:sequence>
+            </xs:complexType>
+        </xs:element>
+    </xs:schema>
+
+    <lists>
+        <strings>one</strings>
+        <strings>two</strings>
+        <floats>1.1</floats>
+        <floats>1.2</floats>
+        <doubles>1.1</doubles>
+        <doubles>1.2</doubles>
+        <shorts>1</shorts>
+        <shorts>2</shorts>
+        <ints>1</ints>
+        <ints>2</ints>
+        <longs>1</longs>
+        <longs>2</longs>
+        <booleans>true</booleans>
+        <booleans>false</booleans>
+    </lists>
+    <items>
+        <string>three</string>
+        <float>1.3</float>
+        <double>1.3</double>
+        <short>3</short>
+        <int>3</int>
+        <long>3</long>
+        <boolean>false</boolean>
+    </items>
+    <optionals>
+        <string>four</string>
+        <float>1.4</float>
+        <double>1.4</double>
+        <short>4</short>
+        <int>4</int>
+        <long>4</long>
+        <boolean>true</boolean>
+    </optionals>
+</root>

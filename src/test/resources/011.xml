@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<root>
+    <the-map>
+        <entry>
+            <key>key1</key>
+            <value>value1</value>
+        </entry>
+        <entry>
+            <key>key2</key>
+            <value>value2</value>
+        </entry>
+        <entry>
+            <key>key3</key>
+            <value>value3</value>
+        </entry>
+    </the-map>
+</root>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <entry>
+        <key keyLetter="A" keyWord="APPLE">FIRST</key>
+        <value valueLetter="a">SIMPLE</value>
+    </entry>
+    <entry>
+        <key keyLetter="C" keyWord="CABBAGE">SECOND</key>
+        <value valueLetter="b">SINGLE</value>
+    </entry>
+</root>

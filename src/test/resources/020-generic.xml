@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<root>
+    <entry>
+        <key>
+            <keyLetter>AA</keyLetter>
+            <keyNumber>12</keyNumber>
+        </key>
+        <value>
+            <valueLetter>aa</valueLetter>
+            <valueNumber>1</valueNumber>
+        </value>
+    </entry>
+    <entry>
+        <key>
+            <keyLetter>BB</keyLetter>
+            <keyNumber>23</keyNumber>
+        </key>
+        <value>
+            <valueLetter>bb</valueLetter>
+            <valueNumber>2</valueNumber>
+        </value>
+    </entry>
+    <entry>
+        <key>
+            <keyLetter>CC</keyLetter>
+            <keyNumber>34</keyNumber>
+        </key>
+        <value>
+            <valueLetter>cc</valueLetter>
+            <valueNumber>3</valueNumber>
+        </value>
+    </entry>
+</root>

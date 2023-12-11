@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <test1>
+        <test1a>
+            <test1aa>10</test1aa>
+            <test1aa>20</test1aa>
+            <test1aa>30</test1aa>
+            <test1ab>1.1</test1ab>
+            <test1ab>1.2</test1ab>
+            <test1ac>true</test1ac>
+            <test1ac>false</test1ac>
+            <test1ac>true</test1ac>
+            <test1ad>abc</test1ad>
+            <test1ad>def</test1ad>
+            <test1ad>ghi</test1ad>
+            <test1ad>jkl</test1ad>
+        </test1a>
+        <test1b>ppp</test1b>
+        <test1c>qqq</test1c>
+    </test1>
+</root>

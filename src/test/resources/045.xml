@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<root>
+    <entry>
+        <key>2</key>
+        <key>4</key>
+        <key>6</key>
+        <key>8</key>
+        <key>10</key>
+        <value>even numbers</value>
+    </entry>
+    <entry>
+        <key>1</key>
+        <key>3</key>
+        <key>5</key>
+        <key>7</key>
+        <key>9</key>
+        <value>odd numbers</value>
+    </entry>
+</root>

@@ -1,0 +1,15 @@
+{
+    "schema": {
+        "type": "array",
+        "items": {
+            "type": "string",
+            "optional": false
+        },
+        "optional": false
+    },
+    "payload": [
+        "list",
+        "of",
+        "strings"
+    ]
+}

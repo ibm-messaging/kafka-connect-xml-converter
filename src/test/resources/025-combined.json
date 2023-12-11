@@ -1,0 +1,19 @@
+{
+    "schema": {
+        "type": "map",
+        "keys": {
+            "type": "string",
+            "optional": true
+        },
+        "values": {
+            "type": "double",
+            "optional": false
+        },
+        "optional": false
+    },
+    "payload": {
+        "first": 1.1,
+        "null": 2.2,
+        "third": 3.3
+    }
+}

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <lists>
+        <strings>one</strings>
+        <strings>two</strings>
+        <floats>1.1</floats>
+        <floats>1.2</floats>
+        <doubles>1.1</doubles>
+        <doubles>1.2</doubles>
+        <shorts>1</shorts>
+        <shorts>2</shorts>
+        <ints>1</ints>
+        <ints>2</ints>
+        <longs>1</longs>        
+        <longs>2</longs>        
+        <booleans>true</booleans>
+        <booleans>false</booleans>
+    </lists>
+    <items>
+        <string>three</string>
+        <float>1.3</float>
+        <double>1.3</double>
+        <short>3</short>
+        <int>3</int>
+        <long>3</long>        
+        <boolean>false</boolean>
+    </items>
+    <optionals>
+        <string>four</string>
+        <float>1.4</float>
+        <double>1.4</double>
+        <short>4</short>
+        <int>4</int>
+        <long>4</long>        
+        <boolean>true</boolean>        
+    </optionals>
+</root>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="#connectSchema">
+    <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" id="connectSchema">
+        <xs:element name="root">
+            <xs:complexType>
+                <xs:sequence>
+                    <xs:any maxOccurs="1" minOccurs="0" namespace="http://www.w3.org/2001/XMLSchema" processContents="skip" />
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="entry">
+                        <xs:complexType>
+                            <xs:sequence>
+                                <xs:element maxOccurs="unbounded" name="key">
+                                    <xs:complexType>
+                                        <xs:sequence>
+                                            <xs:element name="keyFloat" type="xs:float" />
+                                            <xs:element name="keyBool" type="xs:boolean" />
+                                        </xs:sequence>
+                                    </xs:complexType>
+                                </xs:element>
+                                <xs:element name="value" type="xs:string" />
+                            </xs:sequence>
+                        </xs:complexType>
+                    </xs:element>
+                </xs:sequence>
+            </xs:complexType>
+        </xs:element>
+    </xs:schema>
+    <entry>
+        <key>
+            <keyFloat>7.8</keyFloat>
+            <keyBool>true</keyBool>
+        </key>
+        <key>
+            <keyFloat>17.3</keyFloat>
+            <keyBool>false</keyBool>
+        </key>
+        <value>value0</value>
+    </entry>
+    <entry>
+        <key>
+            <keyFloat>3.9</keyFloat>
+            <keyBool>false</keyBool>
+        </key>
+        <key>
+            <keyFloat>6.2</keyFloat>
+            <keyBool>true</keyBool>
+        </key>
+        <value>value1</value>
+    </entry>
+</root>

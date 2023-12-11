@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="root">
+        <xs:complexType>
+            <xs:all>
+                <xs:element name="test1" type="test1"/>
+            </xs:all>
+        </xs:complexType>
+    </xs:element>
+    <xs:complexType name="test1">
+        <xs:sequence>
+            <xs:element name="test1a" type="test1a" />
+            <xs:element name="test1b" type="xs:string" />
+            <xs:element name="test1c" type="xs:string" />
+        </xs:sequence>
+    </xs:complexType>
+    
+    <xs:complexType name="test1a">
+        <xs:sequence>
+            <xs:element name="test1aa" type="xs:integer" maxOccurs="unbounded" />
+            <xs:element name="test1ab" type="xs:double" maxOccurs="unbounded" />
+            <xs:element name="test1ac" type="xs:boolean" maxOccurs="unbounded" />
+            <xs:element name="test1ad" type="xs:string" maxOccurs="unbounded" />
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>    

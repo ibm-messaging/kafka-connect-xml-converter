@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<byte-data xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="#connectSchema">
+    <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" id="connectSchema">
+        <xs:element name="byte-data">
+            <xs:complexType>
+                <xs:sequence>
+                    <xs:any maxOccurs="1" minOccurs="0" namespace="http://www.w3.org/2001/XMLSchema" processContents="skip" />
+
+                    <xs:element name="oneByte" type="xs:base64Binary" />
+                    <xs:element name="oneUnsignedByte" type="xs:base64Binary" />
+                    <xs:element name="multipleBytes" type="xs:base64Binary" />
+                    <xs:element name="multipleUnsignedBytes" type="xs:base64Binary" />
+                    <xs:element name="base64EncodedBytes" type="xs:base64Binary" />
+                </xs:sequence>
+            </xs:complexType>
+        </xs:element>
+    </xs:schema>
+
+    <oneByte>FA==</oneByte>
+    <oneUnsignedByte>KA==</oneUnsignedByte>
+    <multipleBytes>Hh8gISI=</multipleBytes>
+    <multipleUnsignedBytes>PD0+</multipleUnsignedBytes>
+    <base64EncodedBytes>U2VjcmV0IG1lc3NhZ2U=</base64EncodedBytes>
+</byte-data>

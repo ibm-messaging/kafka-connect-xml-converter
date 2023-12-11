@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="root">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="item1" type="value1" />
+                <xs:element name="item2" type="xs:string" maxOccurs="unbounded" />
+                <xs:element name="item3" type="value3" maxOccurs="unbounded" />
+                <xs:element name="item4" type="value4" />
+                <xs:element name="item5" type="value5" maxOccurs="unbounded" />
+                <xs:element name="item6" type="value6" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:complexType name="value1">
+        <xs:sequence>
+            <xs:element name="item1-a" type="xs:boolean" />
+            <xs:element name="item1-b" type="xs:string" />
+            <xs:element name="item1-c" type="xs:boolean" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="item1-d" type="xs:string" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="item1-e" type="xs:string" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="value3">
+        <xs:sequence>
+            <xs:element name="item3-entry-a" type="xs:string" />
+            <xs:element name="item3-entry-b" type="xs:string" maxOccurs="unbounded" />
+            <xs:element name="item3-entry-c" type="xs:string" minOccurs="0" maxOccurs="1"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="value4">
+        <xs:sequence>
+            <xs:element name="entry" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="key" type="xs:string" />
+                        <xs:element name="value" type="xs:string" />
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="value5">
+        <xs:sequence>
+            <xs:element name="entry" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="key" type="xs:string" />
+                        <xs:element name="value" type="xs:string" />
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="value6Item">
+        <xs:sequence>
+            <xs:element name="message" type="xs:string" />
+            <xs:element name="num" type="xs:integer" />
+            <xs:element name="test" type="xs:boolean" />
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="value6">
+        <xs:sequence>
+            <xs:element name="entry" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="key" type="xs:integer" />
+                        <xs:element name="value" type="value6Item" />
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>

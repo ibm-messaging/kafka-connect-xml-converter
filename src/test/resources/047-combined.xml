@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="#connectSchema">
+    <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" id="connectSchema">
+        <xs:element name="root">
+            <xs:complexType>
+                <xs:sequence>
+                    <xs:any processContents="skip" namespace="http://www.w3.org/2001/XMLSchema" minOccurs="0" maxOccurs="1"/>
+
+                    <xs:element name="optionalByte"          type="xs:byte" minOccurs="0" />
+                    <xs:element name="oneByte"               type="xs:byte"/>
+                    <xs:element name="oneUnsignedByte"       type="xs:unsignedByte" />
+                    <xs:element name="multipleBytes"         type="xs:byte" maxOccurs="unbounded" />
+                    <xs:element name="multipleUnsignedBytes" type="xs:unsignedByte" maxOccurs="unbounded" />
+                    <xs:element name="base64EncodedBytes"    type="xs:base64Binary"/>
+                </xs:sequence>
+            </xs:complexType>
+        </xs:element>
+    </xs:schema>
+
+    <optionalByte>10</optionalByte>
+    <oneByte>20</oneByte>
+    <oneUnsignedByte>40</oneUnsignedByte>
+    <multipleBytes>30</multipleBytes>
+    <multipleBytes>31</multipleBytes>
+    <multipleBytes>32</multipleBytes>
+    <multipleBytes>33</multipleBytes>
+    <multipleBytes>34</multipleBytes>
+    <multipleUnsignedBytes>60</multipleUnsignedBytes>
+    <multipleUnsignedBytes>61</multipleUnsignedBytes>
+    <multipleUnsignedBytes>62</multipleUnsignedBytes>
+    <base64EncodedBytes>U2VjcmV0IG1lc3NhZ2U=</base64EncodedBytes>
+</root>

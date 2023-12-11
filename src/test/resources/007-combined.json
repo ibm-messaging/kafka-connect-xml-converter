@@ -1,0 +1,375 @@
+{
+    "schema": {
+        "type": "struct",
+        "fields": [
+            {
+                "type": "string",
+                "optional": false,
+                "field": "type0"
+            },
+            {
+                "type": "string",
+                "optional": false,
+                "field": "type1"
+            },
+            {
+                "type": "string",
+                "optional": false,
+                "field": "type2"
+            },
+            {
+                "type": "boolean",
+                "optional": false,
+                "field": "type3"
+            },
+            {
+                "type": "string",
+                "optional": false,
+                "field": "type4"
+            },
+            {
+                "type": "string",
+                "optional": false,
+                "field": "type5"
+            },
+            {
+                "type": "double",
+                "optional": false,
+                "field": "type6"
+            },
+            {
+                "type": "double",
+                "optional": false,
+                "field": "type7"
+            },
+            {
+                "type": "string",
+                "optional": false,
+                "field": "type8"
+            },
+            {
+                "type": "float",
+                "optional": false,
+                "field": "type9"
+            },
+            {
+                "type": "string",
+                "optional": false,
+                "field": "type10"
+            },
+            {
+                "type": "string",
+                "optional": false,
+                "field": "type11"
+            },
+            {
+                "type": "string",
+                "optional": false,
+                "field": "type12"
+            },
+            {
+                "type": "string",
+                "optional": false,
+                "field": "type13"
+            },
+            {
+                "type": "string",
+                "optional": false,
+                "field": "type14"
+            },
+            {
+                "type": "string",
+                "optional": false,
+                "field": "type15"
+            },
+            {
+                "type": "string",
+                "optional": false,
+                "field": "type17"
+            },
+            {
+                "type": "string",
+                "optional": false,
+                "field": "type18"
+            },
+            {
+                "type": "int32",
+                "optional": false,
+                "field": "type19"
+            },
+            {
+                "type": "int64",
+                "optional": false,
+                "field": "type20"
+            },
+            {
+                "type": "int32",
+                "optional": false,
+                "field": "type21"
+            },
+            {
+                "type": "int16",
+                "optional": false,
+                "field": "type22"
+            },
+            {
+                "type": "int32",
+                "optional": false,
+                "field": "type24"
+            },
+            {
+                "type": "int32",
+                "optional": false,
+                "field": "type25"
+            },
+            {
+                "type": "int64",
+                "optional": false,
+                "field": "type26"
+            },
+            {
+                "type": "int32",
+                "optional": false,
+                "field": "type27"
+            },
+            {
+                "type": "int16",
+                "optional": false,
+                "field": "type28"
+            },
+            {
+                "type": "int32",
+                "optional": false,
+                "field": "type30"
+            },
+            {
+                "type": "int32",
+                "optional": false,
+                "field": "type31"
+            },
+            {
+                "type": "string",
+                "optional": false,
+                "field": "type32"
+            },
+            {
+                "type": "string",
+                "optional": true,
+                "field": "optType0"
+            },
+            {
+                "type": "string",
+                "optional": true,
+                "field": "optType1"
+            },
+            {
+                "type": "string",
+                "optional": true,
+                "field": "optType2"
+            },
+            {
+                "type": "boolean",
+                "optional": true,
+                "field": "optType3"
+            },
+            {
+                "type": "string",
+                "optional": true,
+                "field": "optType4"
+            },
+            {
+                "type": "string",
+                "optional": true,
+                "field": "optType5"
+            },
+            {
+                "type": "double",
+                "optional": true,
+                "field": "optType6"
+            },
+            {
+                "type": "double",
+                "optional": true,
+                "field": "optType7"
+            },
+            {
+                "type": "string",
+                "optional": true,
+                "field": "optType8"
+            },
+            {
+                "type": "float",
+                "optional": true,
+                "field": "optType9"
+            },
+            {
+                "type": "string",
+                "optional": true,
+                "field": "optType10"
+            },
+            {
+                "type": "string",
+                "optional": true,
+                "field": "optType11"
+            },
+            {
+                "type": "string",
+                "optional": true,
+                "field": "optType12"
+            },
+            {
+                "type": "string",
+                "optional": true,
+                "field": "optType13"
+            },
+            {
+                "type": "string",
+                "optional": true,
+                "field": "optType14"
+            },
+            {
+                "type": "string",
+                "optional": true,
+                "field": "optType15"
+            },
+            {
+                "type": "string",
+                "optional": true,
+                "field": "optType17"
+            },
+            {
+                "type": "string",
+                "optional": true,
+                "field": "optType18"
+            },
+            {
+                "type": "int32",
+                "optional": true,
+                "field": "optType19"
+            },
+            {
+                "type": "int64",
+                "optional": true,
+                "field": "optType20"
+            },
+            {
+                "type": "int32",
+                "optional": true,
+                "field": "optType21"
+            },
+            {
+                "type": "int16",
+                "optional": true,
+                "field": "optType22"
+            },
+            {
+                "type": "int32",
+                "optional": true,
+                "field": "optType24"
+            },
+            {
+                "type": "int32",
+                "optional": true,
+                "field": "optType25"
+            },
+            {
+                "type": "int64",
+                "optional": true,
+                "field": "optType26"
+            },
+            {
+                "type": "int32",
+                "optional": true,
+                "field": "optType27"
+            },
+            {
+                "type": "int16",
+                "optional": true,
+                "field": "optType28"
+            },
+            {
+                "type": "int32",
+                "optional": true,
+                "field": "optType30"
+            },
+            {
+                "type": "int32",
+                "optional": true,
+                "field": "optType31"
+            },
+            {
+                "type": "string",
+                "optional": true,
+                "field": "optType32"
+            }
+        ],
+        "optional": false,
+        "name": "root"
+    },
+    "payload": {
+        "type0": "string",
+        "type1": "https://www.ibm.com",
+        "type2": "YTM0NZomIzI2OTsmIzM0NTueYQ==",
+        "type3": false,
+        "type4": "1996-08-03",
+        "type5": "1971-02-07T22:24:55.93",
+        "type6": -3334129.7650942,
+        "type7": -3103999.81,
+        "type8": "P2Y8M26DT11H11M4.44S",
+        "type9": 60891.24,
+        "type10": "---15",
+        "type11": "--12",
+        "type12": "--03-10",
+        "type13": "2019",
+        "type14": "1980-01",
+        "type15": "212D32",
+        "type17": "string",
+        "type18": "14:45:47.61",
+        "type19": 937,
+        "type20": -1361,
+        "type21": -164,
+        "type22": -2851,
+        "type23": "byte",
+        "type24": 1130,
+        "type25": 4759,
+        "type26": 8937,
+        "type27": 1319,
+        "type28": 398,
+        "type29": "byte",
+        "type30": -2147483260,
+        "type31": -2147475003,
+        "type32": "string",
+        "optType0": "string",
+        "optType1": "https://ibm.com/products/event-automation",
+        "optType2": "YTM0NZomIzI2OTsmIzM0NTueYQ==",
+        "optType3": true,
+        "optType4": "2010-04-04",
+        "optType5": "2005-08-25T05:13:09.44",
+        "optType6": -4417739.7650942,
+        "optType7": 414280.2,
+        "optType8": "P3Y5M10DT9H18M1.61S",
+        "optType9": 32129.77,
+        "optType10": "---27",
+        "optType11": "--11",
+        "optType12": "--11-02",
+        "optType13": "1983",
+        "optType14": "1984-09",
+        "optType15": "21",
+        "optType17": "string",
+        "optType18": "06:19:58.75",
+        "optType19": -4104,
+        "optType20": 2642,
+        "optType21": 734,
+        "optType22": -2796,
+        "optType23": "byte",
+        "optType24": 2418,
+        "optType25": 4471,
+        "optType26": 9218,
+        "optType27": 2361,
+        "optType28": 3702,
+        "optType29": "byte",
+        "optType30": -2147475934,
+        "optType31": -2147475373,
+        "optType32": "string"
+    }
+}

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <entry>
+        <key keyLetter="AAA" keyNumber="123">
+            <keyFloat>1.23</keyFloat>
+        </key>
+        <value>true</value>
+        <value>false</value>
+        <value>true</value>
+    </entry>
+    <entry>
+        <key keyLetter="BBB" keyNumber="456">
+            <keyFloat>4.56</keyFloat>
+        </key>
+        <value>false</value>
+        <value>true</value>
+    </entry>
+</root>

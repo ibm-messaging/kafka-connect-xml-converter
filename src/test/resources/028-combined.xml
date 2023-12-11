@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="#connectSchema">
+    <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" id="connectSchema">
+        <xs:element name="root">
+            <xs:complexType>
+                <xs:sequence>
+                    <xs:any maxOccurs="1" minOccurs="0" namespace="http://www.w3.org/2001/XMLSchema" processContents="skip" />
+
+                    <xs:element name="bytes">
+                        <xs:complexType>
+                            <xs:sequence>
+                                <xs:element maxOccurs="unbounded" minOccurs="0" name="entry">
+                                    <xs:complexType>
+                                        <xs:sequence>
+                                            <xs:element name="key" type="xs:base64Binary" />
+                                            <xs:element name="value" type="xs:base64Binary" />
+                                        </xs:sequence>
+                                    </xs:complexType>
+                                </xs:element>
+                            </xs:sequence>
+                        </xs:complexType>
+                    </xs:element>
+                    <xs:element name="strToBytes">
+                        <xs:complexType>
+                            <xs:sequence>
+                                <xs:element maxOccurs="unbounded" minOccurs="0" name="entry">
+                                    <xs:complexType>
+                                        <xs:sequence>
+                                            <xs:element name="key" type="xs:string" />
+                                            <xs:element name="value" type="xs:base64Binary" />
+                                        </xs:sequence>
+                                    </xs:complexType>
+                                </xs:element>
+                            </xs:sequence>
+                        </xs:complexType>
+                    </xs:element>
+                    <xs:element name="bytesToStr">
+                        <xs:complexType>
+                            <xs:sequence>
+                                <xs:element maxOccurs="unbounded" minOccurs="0" name="entry">
+                                    <xs:complexType>
+                                        <xs:sequence>
+                                            <xs:element name="key" type="xs:base64Binary" />
+                                            <xs:element name="value" type="xs:string" />
+                                        </xs:sequence>
+                                    </xs:complexType>
+                                </xs:element>
+                            </xs:sequence>
+                        </xs:complexType>
+                    </xs:element>
+                </xs:sequence>
+            </xs:complexType>
+        </xs:element>
+    </xs:schema>
+
+    <bytes>
+        <entry>
+            <key>EBESEw==</key>
+            <value>YGFi</value>
+        </entry>
+        <entry>
+            <key>FBU=</key>
+            <value>cHFyc3Q=</value>
+        </entry>
+    </bytes>
+    <strToBytes>
+        <entry>
+            <key>Hello</key>
+            <value>SGVsbG8=</value>
+        </entry>
+        <entry>
+            <key>World</key>
+            <value>V29ybGQ=</value>
+        </entry>
+        <entry>
+            <key>This is a test</key>
+            <value>VGhpcyBpcyBhIHRlc3Q=</value>
+        </entry>
+    </strToBytes>
+    <bytesToStr>
+        <entry>
+            <key>b25l</key>
+            <value>one</value>
+        </entry>
+        <entry>
+            <key>dHdv</key>
+            <value>two</value>
+        </entry>
+    </bytesToStr>
+</root>

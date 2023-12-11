@@ -1,0 +1,234 @@
+{
+    "schema": {
+        "type": "struct",
+        "fields": [
+            {
+                "type": "struct",
+                "fields": [
+                    {
+                        "type": "boolean",
+                        "optional": false,
+                        "field": "item1-a"
+                    },
+                    {
+                        "type": "string",
+                        "optional": false,
+                        "field": "item1-b"
+                    },
+                    {
+                        "type": "boolean",
+                        "optional": true,
+                        "field": "item1-c"
+                    },
+                    {
+                        "type": "string",
+                        "optional": true,
+                        "field": "item1-d"
+                    },
+                    {
+                        "type": "array",
+                        "items": {
+                            "type": "string",
+                            "optional": false
+                        },
+                        "optional": false,
+                        "field": "item1-e"
+                    }
+                ],
+                "optional": false,
+                "field": "item1"
+            },
+            {
+                "type": "array",
+                "items": {
+                    "type": "string",
+                    "optional": false
+                },
+                "optional": false,
+                "field": "item2"
+            },
+            {
+                "type": "array",
+                "items": {
+                    "type": "struct",
+                    "fields": [
+                        {
+                            "type": "string",
+                            "optional": false,
+                            "field": "item3-entry-a"
+                        },
+                        {
+                            "type": "array",
+                            "items": {
+                                "type": "string",
+                                "optional": false
+                            },
+                            "optional": false,
+                            "field": "item3-entry-b"
+                        },
+                        {
+                            "type": "string",
+                            "optional": true,
+                            "field": "item3-entry-c"
+                        }
+                    ],
+                    "optional": false
+                },
+                "optional": false,
+                "field": "item3"
+            },
+            {
+                "type": "map",
+                "keys": {
+                    "type": "string",
+                    "optional": false
+                },
+                "values": {
+                    "type": "string",
+                    "optional": false
+                },
+                "optional": false,
+                "field": "item4"
+            },
+            {
+                "type": "array",
+                "items": {
+                    "type": "map",
+                    "keys": {
+                        "type": "string",
+                        "optional": false
+                    },
+                    "values": {
+                        "type": "string",
+                        "optional": false
+                    },
+                    "optional": false
+                },
+                "optional": false,
+                "field": "item5"
+            },
+            {
+                "type": "map",
+                "keys": {
+                    "type": "int32",
+                    "optional": false
+                },
+                "values": {
+                    "type": "struct",
+                    "fields": [
+                        {
+                            "type": "string",
+                            "optional": false,
+                            "field": "message"
+                        },
+                        {
+                            "type": "int32",
+                            "optional": false,
+                            "field": "num"
+                        },
+                        {
+                            "type": "boolean",
+                            "optional": false,
+                            "field": "test"
+                        }
+                    ],
+                    "optional": false
+                },
+                "optional": false,
+                "field": "item6"
+            }
+        ],
+        "optional": false,
+        "name": "root"
+    },
+    "payload": {
+        "item1": {
+            "item1-a": false,
+            "item1-b": "abc",
+            "item1-c": true,
+            "item1-d": null,
+            "item1-e": [
+                "doo",
+                "foo",
+                "goo"
+            ]
+        },
+        "item2": [
+            "alpha",
+            "beta",
+            "gamma"
+        ],
+        "item3": [
+            {
+                "item3-entry-a": "AAA",
+                "item3-entry-b": [
+                    "A",
+                    "B"
+                ],
+                "item3-entry-c": "BBB"
+            },
+            {
+                "item3-entry-a": "CCC",
+                "item3-entry-b": [
+                    "C",
+                    "D",
+                    "E"
+                ],
+                "item3-entry-c": null
+            },
+            {
+                "item3-entry-a": "FFF",
+                "item3-entry-b": [
+                    "F",
+                    "G"
+                ],
+                "item3-entry-c": "GGG"
+            }
+        ],
+        "item4": {
+            "ooo": "pqrst",
+            "ppp": "uvwxy",
+            "qqq": "rstuv"
+        },
+        "item5": [
+            {
+                "e1a": "aaa",
+                "e1b": "bbb"
+            },
+            {
+                "e2a": "ccc",
+                "e2b": "ddd",
+                "e2c": "eee"
+            },
+            {
+                "e3a": "fff"
+            }
+        ],
+        "item6": [
+            [
+                2,
+                {
+                    "message": "hello",
+                    "num": 1000,
+                    "test": true
+                }
+            ],
+            [
+                5,
+                {
+                    "message": "world",
+                    "num": 2000,
+                    "test": false
+                }
+            ],
+            [
+                9,
+                {
+                    "message": "xxx",
+                    "num": 3000,
+                    "test": true
+                }
+            ]
+        ]
+    }
+}

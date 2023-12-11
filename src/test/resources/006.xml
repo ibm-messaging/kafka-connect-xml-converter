@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<root>
+    <test1
+        test2="one"/>
+
+    <outer>
+        <test3 test4="two">
+            <test5 test6="three">test message</test5>
+            <test5 test6="four">next item</test5>
+            <test5 test7="five">final item</test5>
+        </test3>
+    </outer>
+</root>
