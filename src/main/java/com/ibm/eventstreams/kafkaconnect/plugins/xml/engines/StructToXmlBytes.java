@@ -15,12 +15,14 @@
  */
 package com.ibm.eventstreams.kafkaconnect.plugins.xml.engines;
 
+import java.math.BigDecimal;
 import java.util.Base64;
 import java.util.Collection;
 import java.util.Map;
 
 import javax.xml.XMLConstants;
 
+import org.apache.kafka.connect.data.Decimal;
 import org.apache.kafka.connect.data.Field;
 import org.apache.kafka.connect.data.Schema;
 import org.apache.kafka.connect.data.Schema.Type;
@@ -233,19 +235,21 @@ public class StructToXmlBytes extends ToXmlBytes {
 
                 case BYTES:
                     final Element bytesElement = doc.createElement(field.name());
-                    if (source.getBytes(field.name()) != null) {
-                        final byte[] bytes = source.getBytes(field.name());
+                    final byte[] bytes ;
+                    String strRepresentation;
 
-                        String strRepresentation;
-                        if (bytes.length == 1 && "xs:byte".equals(fieldSchema.doc())) {
-                            strRepresentation = Byte.toString(bytes[0]);
-                        }
-                        else {
-                            strRepresentation = new String(Base64.getEncoder().encode(bytes));
-                        }
-
-                        bytesElement.appendChild(doc.createTextNode(strRepresentation));
+                    if (Decimal.LOGICAL_NAME.equals(fieldSchema.name())){
+                        strRepresentation = source.get(field.name()).toString();
+                    } else {
+                       bytes =  source.getBytes(field.name());
+                       if (bytes.length == 1 && "xs:byte".equals(fieldSchema.doc())) {
+                           strRepresentation = Byte.toString(bytes[0]);
+                       } else {
+                           strRepresentation = Base64.getEncoder().encodeToString(bytes);
+                       }
                     }
+                    bytesElement.appendChild(doc.createTextNode(strRepresentation));
+
                     parentElement.appendChild(bytesElement);
                     break;
 

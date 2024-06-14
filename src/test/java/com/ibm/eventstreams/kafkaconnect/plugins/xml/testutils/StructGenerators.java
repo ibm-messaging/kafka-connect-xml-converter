@@ -15,12 +15,14 @@
  */
 package com.ibm.eventstreams.kafkaconnect.plugins.xml.testutils;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.apache.kafka.connect.data.Decimal;
 import org.apache.kafka.connect.data.Schema;
 import org.apache.kafka.connect.data.SchemaAndValue;
 import org.apache.kafka.connect.data.SchemaBuilder;
@@ -1808,6 +1810,25 @@ public class StructGenerators {
                 value.put("estatus-tx", "1");
                 value.put("version", "7.0.1001.2");
                 value.put("data", data);
+
+                return new SchemaAndValue(schema, value);
+            }
+            case "055":{
+
+                final Schema decimalSchema = Decimal.builder(3).build();
+                final Schema schema = SchemaBuilder.struct()
+                    .name("root")
+                    .field("ProductID", Schema.INT32_SCHEMA)
+                    .field("ProductName", Schema.STRING_SCHEMA)
+                    .field("Price", decimalSchema)
+                    .build();
+                final Struct value = new Struct(schema);
+
+                BigDecimal bigDecimal = new BigDecimal(10).setScale(3);
+
+                value.put("ProductID", 1);
+                value.put("ProductName", "TestProductName");
+                value.put("Price", bigDecimal);
 
                 return new SchemaAndValue(schema, value);
             }
