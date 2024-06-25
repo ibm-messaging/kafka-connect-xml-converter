@@ -16,10 +16,13 @@
 package com.ibm.eventstreams.kafkaconnect.plugins.xml.testutils;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Collections;
+import java.util.GregorianCalendar;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.TimeZone;
 
 import org.apache.kafka.connect.data.Schema;
 import org.apache.kafka.connect.data.SchemaAndValue;
@@ -27,6 +30,10 @@ import org.apache.kafka.connect.data.SchemaBuilder;
 import org.apache.kafka.connect.data.Struct;
 
 import com.ibm.eventstreams.kafkaconnect.plugins.xml.exceptions.NotImplementedException;
+import org.apache.kafka.connect.data.Time;
+import org.apache.kafka.connect.data.Date;
+import org.apache.kafka.connect.data.Timestamp;
+
 
 public class StructGenerators {
 
@@ -1680,6 +1687,7 @@ public class StructGenerators {
                 value.put("array-of-strings", arrayOfStrings);
                 value.put("map-of-arrays", mapOfArrays);
 
+
                 return new SchemaAndValue(schema, value);
             }
             case "052": {
@@ -1811,6 +1819,74 @@ public class StructGenerators {
 
                 return new SchemaAndValue(schema, value);
             }
+            case "056":{
+
+                final Schema timeSchema = Time.builder().schema();
+                final Schema schema = SchemaBuilder.struct()
+                        .name("root")
+                        .field("ProductID", Schema.INT32_SCHEMA)
+                        .field("ProductName", Schema.STRING_SCHEMA)
+                        .field("PurchaseTime", timeSchema)
+                        .build();
+                final Struct value = new Struct(schema);
+
+                GregorianCalendar timeFormat =  new GregorianCalendar(2024, Calendar.JUNE, 24, 6, 30, 0);
+                timeFormat.setTimeZone(TimeZone.getTimeZone("UTC"));
+
+                java.util.Date calenderTime =  timeFormat.getTime();
+
+                value.put("ProductID", 1);
+                value.put("ProductName", "TestProductName");
+                value.put("PurchaseTime", calenderTime );
+
+
+                return new SchemaAndValue(schema, value);
+            }
+            case "057":{
+
+                final Schema dateSchema = Date.builder().schema();
+                final Schema schema = SchemaBuilder.struct()
+                        .name("root")
+                        .field("ProductID", Schema.INT32_SCHEMA)
+                        .field("ProductName", Schema.STRING_SCHEMA)
+                        .field("PurchaseDate", dateSchema)
+                        .build();
+                final Struct value = new Struct(schema);
+
+                GregorianCalendar timeFormat =  new GregorianCalendar(2024, Calendar.JUNE, 24, 0, 0, 0);
+                timeFormat.setTimeZone(TimeZone.getTimeZone("UTC"));
+                java.util.Date calenderTime =  timeFormat.getTime();
+
+                value.put("ProductID", 1);
+                value.put("ProductName", "TestProductName");
+                value.put("PurchaseDate", calenderTime );
+
+
+                return new SchemaAndValue(schema, value);
+            }
+            case "058":{
+
+                final Schema timeStampSchema = Timestamp.builder().schema();
+                final Schema schema = SchemaBuilder.struct()
+                        .name("root")
+                        .field("ProductID", Schema.INT32_SCHEMA)
+                        .field("ProductName", Schema.STRING_SCHEMA)
+                        .field("PurchaseTimeStamp", timeStampSchema)
+                        .build();
+                final Struct value = new Struct(schema);
+
+                GregorianCalendar timeStampFormat =  new GregorianCalendar(2024, Calendar.JUNE, 24, 4, 30, 0);
+                timeStampFormat.setTimeZone(TimeZone.getTimeZone("UTC"));
+                java.util.Date calenderTime =  timeStampFormat.getTime();
+
+                value.put("ProductID", 1);
+                value.put("ProductName", "TestProductName");
+                value.put("PurchaseTimeStamp", calenderTime );
+
+
+                return new SchemaAndValue(schema, value);
+            }
+
         }
         throw new NotImplementedException("Unrecognised test " + testCaseId);
     }

@@ -17,11 +17,15 @@ package com.ibm.eventstreams.kafkaconnect.plugins.xml.testutils;
 
 import java.util.ArrayList;
 import java.util.Base64;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
 import java.util.LinkedHashMap;
 import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.TimeZone;
+
 
 public class MapGenerators {
 
@@ -1027,6 +1031,35 @@ public class MapGenerators {
                 value.put("version", "7.0.1001.2");
                 value.put("data", data);
                 break;
+            }
+            case "056":{
+                GregorianCalendar timeFormat =  new GregorianCalendar(2024, Calendar.JUNE, 24, 6, 30, 0 );
+                timeFormat.setTimeZone(TimeZone.getTimeZone("UTC"));
+                value.put("ProductID", 1);
+                value.put("ProductName", "TestProductName");
+                value.put("PurchaseTime", timeFormat.getTime() );
+                break;
+
+            }
+            case "057":{
+
+                GregorianCalendar dateFormat =  new GregorianCalendar(2024, Calendar.JUNE, 24, 0, 0, 0 );
+                dateFormat.setTimeZone(TimeZone.getTimeZone("UTC"));
+                value.put("ProductID", 1);
+                value.put("ProductName", "TestProductName");
+                value.put("PurchaseDate", dateFormat.getTime());
+                break;
+
+            }
+            case "058":{
+
+                GregorianCalendar dateFormat =  new GregorianCalendar(2024, Calendar.JUNE, 24, 4, 30, 0 );
+                dateFormat.setTimeZone(TimeZone.getTimeZone("UTC"));
+                value.put("ProductID", 1);
+                value.put("ProductName", "TestProductName");
+                value.put("PurchaseTimeStamp", dateFormat.getTime());
+                break;
+
             }
         }
         return value;
