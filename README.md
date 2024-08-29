@@ -19,7 +19,7 @@ Optional configuration that can be set when using the plugin to turn XML strings
 |------------------------|-------------------|------------------------------------------------------------------|
 | `root.element.name`    | `root`            | The name of the root element in the XML document being parsed.   |
 | `xsd.schema.path`      |                   | Location of a schema file to use to parse the XML string. |
-| `xml.doc.flat.enable`  | `false`           | Set to true if the XML strings contain a single value (e.g. `<root>the message</root>` |)
+| `xml.doc.flat.enable`  | `false`           | Set to true if the XML strings contain a single value (e.g. `<root>the message</root>`) |
 
 Optional configuration that can be set when using the plugin to create XML strings from Connect records
 
@@ -31,21 +31,21 @@ Optional configuration that can be set when using the plugin to create XML strin
 
 Use **`XmlConverter`** with Source Connectors to produce structured Connect records to Kafka topics as XML strings.
 
-```
+```properties
 value.converter=com.ibm.eventstreams.kafkaconnect.plugins.xml.XmlConverter
 value.converter.schemas.enable=false
 ```
 
 Use **`XmlConverter`** with Source Connectors to produce Connect records to Kafka topics as XML strings, with an embedded XSD schema. (requires structs)
 
-```
+```properties
 value.converter=com.ibm.eventstreams.kafkaconnect.plugins.xml.XmlConverter
 value.converter.schemas.enable=true
 ```
 
 Use **`XmlTransformation`** with Sink Connectors to convert a Connect record containing an XML string into a structured Connect record.
 
-```
+```properties
 transforms=xmlconvert
 transforms.xmlconvert.type=com.ibm.eventstreams.kafkaconnect.plugins.xml.XmlTransformation
 transforms.xmlconvert.converter.type=value
@@ -53,14 +53,14 @@ transforms.xmlconvert.converter.type=value
 
 Use **`XmlConverter`** with the MQ Sink Connector to send non-XML Kafka messages to MQ queues as XML strings.
 
-```
+```properties
 mq.message.builder=com.ibm.eventstreams.connect.mqsink.builders.ConverterMessageBuilder
 mq.message.builder.value.converter=com.ibm.eventstreams.kafkaconnect.plugins.xml.XmlConverter
 ```
 
 Use **`XmlMQRecordBuilder`** with the MQ Source Connector to convert XML strings from MQ queues into Connect records.
 
-```
+```properties
 mq.record.builder=com.ibm.eventstreams.kafkaconnect.plugins.xml.XmlMQRecordBuilder
 mq.record.builder.schemas.enable=true
 mq.record.builder.xsd.schema.path=/location/of/mq-message-schema.xsd
