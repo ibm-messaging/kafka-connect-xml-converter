@@ -79,10 +79,13 @@ public class XStreamMapConverterTest {
 //            { "034", true },
 //            { "035", true },
 //            { "036", true },
-            { "037", true }
+            { "037", true },
 //            { "038", true },
 //            { "039", true },
 //            { "040", true },
+            { "052", false },
+            { "053", false },
+            { "054", true }
         });
     }
 

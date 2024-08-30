@@ -1,0 +1,16 @@
+<root date="2024-08-06 12:32:04" cr="2246" tx="PE23" user="01888329" estatus-tx="1" version="7.0.1001.2">
+    <data>
+        <xml-entrada>
+            <datos>
+                <transaccion id="PE80" tecla="00">
+                    <numclie>51372133</numclie>
+                </transaccion>
+            </datos>
+        </xml-entrada>
+        <trama-entrada>longer test string</trama-entrada>
+        <mq-server>MQ : SPIAWT99;;;SPIA.QC.QZT1;SPIA.QP.OUT</mq-server>
+        <direccion-IP>17.127.22.33</direccion-IP>
+        <nombre-servidor>Qpbxiaa</nombre-servidor>
+        <canal>ABC</canal>
+    </data>
+</root>

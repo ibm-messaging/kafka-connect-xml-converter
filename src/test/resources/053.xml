@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root myattr1="testing" myattr2="123" myattr3="false">
+    <test1 myattr4="inner">one</test1>
+    <test2>
+        <test2a>alpha</test2a>
+        <test2b myattr5="deepinner">beta</test2b>
+    </test2>
+    <test3 myattr6="middle">
+        <test3a>333</test3a>
+    </test3>
+    <test4>four</test4>
+</root>

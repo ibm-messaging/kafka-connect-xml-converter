@@ -1682,6 +1682,135 @@ public class StructGenerators {
 
                 return new SchemaAndValue(schema, value);
             }
+            case "052": {
+                final Schema schema = SchemaBuilder.struct()
+                    .name("root")
+                    .field("test1", Schema.STRING_SCHEMA)
+                    .field("test2", Schema.STRING_SCHEMA)
+                    .field("myattr1", Schema.OPTIONAL_STRING_SCHEMA)
+                    .field("myattr2", Schema.OPTIONAL_INT32_SCHEMA)
+                    .build();
+
+                final Struct value = new Struct(schema);
+                value.put("test1", "one");
+                value.put("test2", "two");
+                value.put("myattr1", "testing");
+                value.put("myattr2", 123);
+
+                return new SchemaAndValue(schema, value);
+            }
+            case "053": {
+                final Schema test1Schema = SchemaBuilder.struct()
+                    .field("entry", Schema.STRING_SCHEMA)
+                    .field("myattr4", Schema.OPTIONAL_STRING_SCHEMA)
+                    .build();
+                final Schema test2bSchema = SchemaBuilder.struct()
+                    .field("entry", Schema.STRING_SCHEMA)
+                    .field("myattr5", Schema.STRING_SCHEMA)
+                    .build();
+                final Schema test2Schema = SchemaBuilder.struct()
+                    .field("test2a", Schema.STRING_SCHEMA)
+                    .field("test2b", test2bSchema)
+                    .build();
+                final Schema test3Schema = SchemaBuilder.struct()
+                    .field("test3a", Schema.INT32_SCHEMA)
+                    .field("myattr6", Schema.STRING_SCHEMA)
+                    .build();
+
+                final Schema schema = SchemaBuilder.struct()
+                    .name("root")
+                    .field("test1", test1Schema)
+                    .field("test2", test2Schema)
+                    .field("test3", test3Schema)
+                    .field("test4", Schema.STRING_SCHEMA)
+                    .field("myattr1", Schema.STRING_SCHEMA)
+                    .field("myattr2", Schema.OPTIONAL_INT32_SCHEMA)
+                    .field("myattr3", Schema.BOOLEAN_SCHEMA)
+                    .build();
+
+                final Struct test1 = new Struct(test1Schema);
+                test1.put("myattr4", "inner");
+                test1.put("entry", "one");
+                final Struct test2b = new Struct(test2bSchema);
+                test2b.put("myattr5", "deepinner");
+                test2b.put("entry", "beta");
+                final Struct test2 = new Struct(test2Schema);
+                test2.put("test2a", "alpha");
+                test2.put("test2b", test2b);
+                final Struct test3 = new Struct(test3Schema);
+                test3.put("myattr6", "middle");
+                test3.put("test3a", 333);
+
+                final Struct value = new Struct(schema);
+                value.put("test1", test1);
+                value.put("test2", test2);
+                value.put("test3", test3);
+                value.put("test4", "four");
+                value.put("myattr1", "testing");
+                value.put("myattr2", 123);
+                value.put("myattr3", false);
+
+                return new SchemaAndValue(schema, value);
+            }
+            case "054": {
+                final Schema transaccionSchema = SchemaBuilder.struct()
+                    .field("numclie", Schema.INT32_SCHEMA)
+                    .field("id", Schema.STRING_SCHEMA)
+                    .field("tecla", Schema.STRING_SCHEMA)
+                    .build();
+                final Schema datosSchema = SchemaBuilder.struct()
+                    .field("transaccion", transaccionSchema)
+                    .build();
+                final Schema xmlentradaSchema = SchemaBuilder.struct()
+                    .field("datos", datosSchema)
+                    .build();
+                final Schema dataSchema = SchemaBuilder.struct()
+                    .field("xml-entrada", xmlentradaSchema)
+                    .field("trama-entrada", Schema.STRING_SCHEMA)
+                    .field("mq-server", Schema.STRING_SCHEMA)
+                    .field("direccion-IP", Schema.STRING_SCHEMA)
+                    .field("nombre-servidor", Schema.STRING_SCHEMA)
+                    .field("canal", Schema.STRING_SCHEMA)
+                    .build();
+
+                final Schema schema = SchemaBuilder.struct()
+                    .name("root")
+                    .field("data", dataSchema)
+                    .field("date", Schema.STRING_SCHEMA)
+                    .field("cr", Schema.STRING_SCHEMA)
+                    .field("tx", Schema.STRING_SCHEMA)
+                    .field("user", Schema.STRING_SCHEMA)
+                    .field("estatus-tx", Schema.STRING_SCHEMA)
+                    .field("version", Schema.STRING_SCHEMA)
+                    .build();
+
+                final Struct transaccion = new Struct(transaccionSchema);
+                transaccion.put("id", "PE80");
+                transaccion.put("tecla", "00");
+                transaccion.put("numclie", 51372133);
+                final Struct datos = new Struct(datosSchema);
+                datos.put("transaccion", transaccion);
+                final Struct xmlentrada = new Struct(xmlentradaSchema);
+                xmlentrada.put("datos", datos);
+                final Struct data = new Struct(dataSchema);
+                data.put("xml-entrada", xmlentrada);
+                data.put("trama-entrada", "longer test string");
+                data.put("mq-server", "MQ : SPIAWT99;;;SPIA.QC.QZT1;SPIA.QP.OUT");
+                data.put("direccion-IP", "17.127.22.33");
+                data.put("nombre-servidor", "Qpbxiaa");
+                data.put("canal", "ABC");
+
+                final Struct value = new Struct(schema);
+                value.put("date", "2024-08-06 12:32:04");
+                value.put("cr", "2246");
+                value.put("tx", "PE23");
+                value.put("user", "01888329");
+                value.put("estatus-tx", "1");
+                value.put("version", "7.0.1001.2");
+                value.put("data", data);
+
+                return new SchemaAndValue(schema, value);
+            }
         }
         throw new NotImplementedException("Unrecognised test " + testCaseId);
     }
