@@ -45,15 +45,25 @@ public class XStreamMapConverter implements Converter {
 
     @Override
     public Object unmarshal(HierarchicalStreamReader reader, UnmarshallingContext context) {
-        return xmlToMap(reader);
+        return xmlToMap(reader, true);
     }
 
 
 
-    private Map<String, Object> xmlToMap(HierarchicalStreamReader reader, Map<String, Object> map) {
+    private Map<String, Object> xmlToMap(HierarchicalStreamReader reader, boolean isXmlRoot) {
         final List<Map<String, Object>> list = new ArrayList<Map<String, Object>>();
 
         Map<String, Object> attrs = new LinkedHashMap<>();
+
+        if (isXmlRoot) {
+            // capture attributes from the root node of the XML document
+            //  (not needed when recursing deeper in the document as these
+            //   will have already been captured)
+            attrs = attrsToMap(reader);
+            if (attrs.size() > 0) {
+                list.add(attrs);
+            }
+        }
 
         while (reader.hasMoreChildren()) {
             // get attributes of current node
@@ -64,7 +74,7 @@ public class XStreamMapConverter implements Converter {
 
             if (reader.hasMoreChildren()) {
                 // child nodes found at the lower level - process recursively
-                final Map<String, Object> innerItem = xmlToMap(reader);
+                final Map<String, Object> innerItem = xmlToMap(reader, false);
 
                 if (attrs.size() > 0) {
                     mergeAttributesIntoNode(reader.getNodeName(), innerItem, attrs);
@@ -102,6 +112,7 @@ public class XStreamMapConverter implements Converter {
         }
 
         // return as a map
+        Map<String, Object> map = new LinkedHashMap<>();
         map.put(reader.getNodeName(), convertMapToList(flatten(list)));
 
         return map;
@@ -132,11 +143,6 @@ public class XStreamMapConverter implements Converter {
             attrsMap.put(attrName, XmlUtils.guessType(reader.getAttribute(attrName)));
         }
         return attrsMap;
-    }
-
-
-    private Map<String, Object> xmlToMap(HierarchicalStreamReader reader) {
-        return xmlToMap(reader, new LinkedHashMap<String, Object>());
     }
 
 

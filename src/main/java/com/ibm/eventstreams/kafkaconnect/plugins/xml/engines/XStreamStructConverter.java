@@ -56,7 +56,7 @@ public class XStreamStructConverter implements Converter {
     public Object unmarshal(HierarchicalStreamReader reader, UnmarshallingContext context) {
         if (schema.type() == Type.STRUCT) {
             final Struct newObject = new Struct(schema);
-            xmlToStruct(reader, schema, newObject);
+            xmlToStruct(reader, schema, newObject, true);
             return newObject;
         }
         else if (schema.type() == Type.MAP) {
@@ -280,7 +280,17 @@ public class XStreamStructConverter implements Converter {
 
 
 
-    private void xmlToStruct(HierarchicalStreamReader reader, Schema schema, Struct object) {
+    private void xmlToStruct(HierarchicalStreamReader reader, Schema schema, Struct object, boolean isXmlRoot) {
+
+        if (isXmlRoot) {
+            // capture attributes from the root node of the XML document
+            //  (not needed when recursing deeper in the document as these
+            //   will have already been captured)
+            Map<String, String> rootAttrs = getAttributes(reader);
+            if (rootAttrs.size() > 0) {
+                processStruct(reader, object, rootAttrs, schema);
+            }
+        }
 
         while (reader.hasMoreChildren()) {
 
@@ -349,7 +359,7 @@ public class XStreamStructConverter implements Converter {
             });
 
         // populate the struct
-        xmlToStruct(reader, schema, struct);
+        xmlToStruct(reader, schema, struct, false);
 
         // add any attributes from the node to the struct
         addAttributesToStruct(attributes, struct, schema);
@@ -394,7 +404,7 @@ public class XStreamStructConverter implements Converter {
                 }
 
                 if (reader.hasMoreChildren()) {
-                    xmlToStruct(reader, listItemSchema, obj);
+                    xmlToStruct(reader, listItemSchema, obj, false);
                 }
 
                 list.add(obj);

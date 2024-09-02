@@ -116,7 +116,7 @@ public class MapGenerators {
             case "005":
                 value.put("entry", ListGenerators.get(testCaseId));
                 break;
-            case "006":
+            case "006": {
                 final Map<String, Object> test1 = new LinkedHashMap<>();
                 test1.put("test2", "one");
                 final Map<String, Object> test5_0 = new LinkedHashMap<>();
@@ -137,6 +137,7 @@ public class MapGenerators {
                 value.put("test1", test1);
                 value.put("outer", outer);
                 break;
+            }
             case "007":
                 value.put("type0", "string");
                 value.put("type1", "https://www.ibm.com");
@@ -968,6 +969,65 @@ public class MapGenerators {
                 value.put("map-of-arrays", mapOfArrays);
                 break;
             }
+            case "052": {
+                value.put("myattr1", "testing");
+                value.put("myattr2", 123);
+                value.put("test1", "one");
+                value.put("test2", "two");
+                break;
+            }
+            case "053": {
+                value.put("myattr1", "testing");
+                value.put("myattr2", 123);
+                value.put("myattr3", false);
+
+                Map<String, Object> test1 = new LinkedHashMap<>();
+                test1.put("myattr4", "inner");
+                test1.put("entry", "one");
+                value.put("test1", test1);
+
+                Map<String, Object> test2 = new LinkedHashMap<>();
+                test2.put("test2a", "alpha");
+                Map<String, Object> test2b = new LinkedHashMap<>();
+                test2b.put("myattr5", "deepinner");
+                test2b.put("entry", "beta");
+                test2.put("test2b", test2b);
+                value.put("test2", test2);
+
+                Map<String, Object> test3 = new LinkedHashMap<>();
+                test3.put("myattr6", "middle");
+                test3.put("test3a", 333);
+                value.put("test3", test3);
+
+                value.put("test4", "four");
+                break;
+            }
+            case "054": {
+                Map<String, Object> transaccion = new LinkedHashMap<>();
+                transaccion.put("id", "PE80");
+                transaccion.put("tecla", "00");
+                transaccion.put("numclie", 51372133);
+                Map<String, Object> datos = new LinkedHashMap<>();
+                datos.put("transaccion", transaccion);
+                Map<String, Object> xmlentrada = new LinkedHashMap<>();
+                xmlentrada.put("datos", datos);
+                Map<String, Object> data = new LinkedHashMap<>();
+                data.put("xml-entrada", xmlentrada);
+                data.put("trama-entrada", "longer test string");
+                data.put("mq-server", "MQ : SPIAWT99;;;SPIA.QC.QZT1;SPIA.QP.OUT");
+                data.put("direccion-IP", "17.127.22.33");
+                data.put("nombre-servidor", "Qpbxiaa");
+                data.put("canal", "ABC");
+
+                value.put("date", "2024-08-06 12:32:04");
+                value.put("cr", 2246);
+                value.put("tx", "PE23");
+                value.put("user", "01888329");
+                value.put("estatus-tx", 1);
+                value.put("version", "7.0.1001.2");
+                value.put("data", data);
+                break;
+            }
         }
         return value;
     }
@@ -1587,6 +1647,34 @@ public class MapGenerators {
                 value.put("multipleBytes", List.of(30, 31, 32, 33, 34));
                 value.put("multipleUnsignedBytes", List.of(60, 61, 62));
                 value.put("base64EncodedBytes", "U2VjcmV0IG1lc3NhZ2U=");
+                return value;
+            }
+            case "054": {
+                final Map<String, Object> value = new LinkedHashMap<>();
+
+                Map<String, Object> transaccion = new LinkedHashMap<>();
+                transaccion.put("id", "PE80");
+                transaccion.put("tecla", 0);
+                transaccion.put("numclie", 51372133);
+                Map<String, Object> datos = new LinkedHashMap<>();
+                datos.put("transaccion", transaccion);
+                Map<String, Object> xmlentrada = new LinkedHashMap<>();
+                xmlentrada.put("datos", datos);
+                Map<String, Object> data = new LinkedHashMap<>();
+                data.put("xml-entrada", xmlentrada);
+                data.put("trama-entrada", "longer test string");
+                data.put("mq-server", "MQ : SPIAWT99;;;SPIA.QC.QZT1;SPIA.QP.OUT");
+                data.put("direccion-IP", "17.127.22.33");
+                data.put("nombre-servidor", "Qpbxiaa");
+                data.put("canal", "ABC");
+
+                value.put("date", "2024-08-06 12:32:04");
+                value.put("cr", 2246);
+                value.put("tx", "PE23");
+                value.put("user", 1888329);
+                value.put("estatus-tx", 1);
+                value.put("version", "7.0.1001.2");
+                value.put("data", data);
                 return value;
             }
             default:

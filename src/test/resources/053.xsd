@@ -1,0 +1,49 @@
+<?xml version = "1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="root">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="test1" type="test1"/>
+                <xs:element name="test2" type="test2"/>
+                <xs:element name="test3" type="test3"/>
+                <xs:element name="test4" type="xs:string"/>
+            </xs:sequence>
+            <xs:attribute type="xs:string"  name="myattr1" use="required"/>
+            <xs:attribute type="xs:integer" name="myattr2" use="optional"/>
+            <xs:attribute type="xs:boolean" name="myattr3" use="required"/>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:complexType name="test1">
+        <xs:simpleContent>
+            <xs:extension base="xs:string">
+                <xs:attribute name="myattr4" type="xs:string" use="optional"/>
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+
+    <xs:complexType name="test2">
+        <xs:sequence>
+            <xs:element name="test2a" type="xs:string"/>
+            <xs:element name="test2b" type="test2b"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="test3">
+        <xs:sequence>
+            <xs:element name="test3a" type="xs:integer"/>
+        </xs:sequence>
+        <xs:attribute name="myattr6" type="xs:string" use="required"/>
+    </xs:complexType>
+
+
+    <xs:complexType name="test2b">
+        <xs:simpleContent>
+            <xs:extension base="xs:string">
+                <xs:attribute name="myattr5" type="xs:string" use="required"/>
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+
+
+</xs:schema>

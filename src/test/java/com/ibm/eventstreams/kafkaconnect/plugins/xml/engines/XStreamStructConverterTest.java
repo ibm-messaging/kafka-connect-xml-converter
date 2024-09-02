@@ -85,7 +85,10 @@ public class XStreamStructConverterTest {
             { "040", false },
             { "042", false },
             { "043", false },
-            { "044", false }
+            { "044", false },
+            { "052", false },
+            { "053", false },
+            { "054", false }
         });
     }
 

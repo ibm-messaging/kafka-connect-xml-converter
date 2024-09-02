@@ -86,7 +86,10 @@ public class XmlToStructTest {
             { "041", true, true },
             { "042", true, true },
             { "043", true, false },
-            { "047", false, false }
+            { "047", false, false },
+            { "052", false, false },
+            { "053", false, false },
+            { "054", true, false }
         });
     }
 

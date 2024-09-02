@@ -79,7 +79,10 @@ public class XsdToSchemaTest {
             { "037", false },
             { "038", true },
             { "040", true },
-            { "047", false }
+            { "047", false },
+            { "052", false },
+            { "053", false },
+            { "054", false }
         });
     }
 

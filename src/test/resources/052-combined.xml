@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="#connectSchema"
+        myattr1="testing" myattr2="123">
+
+    <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" id="connectSchema">
+        <xs:element name="root">
+            <xs:complexType>
+                <xs:sequence>
+                    <xs:element type="xs:string" name="test1"/>
+                    <xs:element type="xs:string" name="test2"/>
+                </xs:sequence>
+                <xs:attribute type="xs:string" name="myattr1"/>
+                <xs:attribute type="xs:integer" name="myattr2"/>
+            </xs:complexType>
+        </xs:element>
+    </xs:schema>
+
+    <test1>one</test1>
+    <test2>two</test2>
+</root>

@@ -1,0 +1,13 @@
+<?xml version = "1.0"?>
+<xs:schema xmlns:xs = "http://www.w3.org/2001/XMLSchema">
+    <xs:element name="root">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element type="xs:string" name="test1"/>
+                <xs:element type="xs:string" name="test2"/>
+            </xs:sequence>
+            <xs:attribute type="xs:string" name="myattr1"/>
+            <xs:attribute type="xs:integer" name="myattr2"/>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>
