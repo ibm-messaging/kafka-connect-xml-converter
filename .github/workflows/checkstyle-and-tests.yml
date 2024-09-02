@@ -13,11 +13,23 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
-      - name: Set up JDK 8
+      - name: Set up JDK 17
         uses: actions/setup-java@v3
         with:
-          java-version: 8
+          java-version: 17
           distribution: 'semeru'
+      - name: Download MQ Source Connector JAR
+        run: |
+          curl -L -o kafka-connect-mq-source-2.1.0.jar https://github.com/ibm-messaging/kafka-connect-mq-source/releases/download/v2.1.0/kafka-connect-mq-source-2.1.0.jar
+
+      - name: Install MQ Source Connector JAR in local Maven repository
+        run: |
+          mvn install:install-file \
+            -Dfile=kafka-connect-mq-source-2.1.0.jar \
+            -DgroupId=com.ibm.eventstreams.connect \
+            -DartifactId=kafka-connect-mq-source \
+            -Dversion=2.1.0 \
+            -Dpackaging=jar
       - name: Get java-version
         run: |
           BUILD_VERSION=$( mvn help:evaluate -Dexpression=project.version -q -DforceStdout )
