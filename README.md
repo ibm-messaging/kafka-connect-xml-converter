@@ -65,3 +65,30 @@ mq.record.builder=com.ibm.eventstreams.kafkaconnect.plugins.xml.XmlMQRecordBuild
 mq.record.builder.schemas.enable=true
 mq.record.builder.xsd.schema.path=/location/of/mq-message-schema.xsd
 ```
+
+## Adding the IBM MQ Source Connector JAR to the Project
+
+To build the project, you need to pull and install the latest IBM MQ Source Connector JAR. Follow these steps:
+
+1. **Download the MQ Source Connector JAR**
+
+   Download the latest version of the MQ Source Connector JAR from the official IBM GitHub releases page:
+
+   ```bash
+   curl -L -o kafka-connect-mq-source-<VERSION>.jar https://github.com/ibm-messaging/kafka-connect-mq-source/releases/download/v<VERSION>/kafka-connect-mq-source-<VERSION>.jar
+   ```
+
+2. **Install the JAR in Your Local Maven Repository**
+
+   Install the downloaded JAR file into your local Maven repository:
+
+   ```bash
+   mvn install:install-file \
+     -Dfile=kafka-connect-mq-source-<VERSION>.jar \
+     -DgroupId=com.ibm.eventstreams.connect \
+     -DartifactId=kafka-connect-mq-source \
+     -Dversion=<VERSION> \
+     -Dpackaging=jar
+   ```
+
+Replace `<VERSION>` with the actual version number of the JAR you downloaded.
