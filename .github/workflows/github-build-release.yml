@@ -18,6 +18,9 @@ jobs:
         with:
           java-version: 17
           distribution: 'semeru'
+      - name: Change timezone
+        run: |
+          sudo timedatectl set-timezone Asia/Kolkata
       - name: Get java-version
         run: |
           BUILD_VERSION=$( mvn help:evaluate -Dexpression=project.version -q -DforceStdout )
