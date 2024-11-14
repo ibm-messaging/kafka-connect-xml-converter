@@ -206,8 +206,11 @@ public class StructToXmlBytes extends ToXmlBytes {
             return;
         }
         for (final Field field : source.schema().fields()) {
-            final Schema fieldSchema = field.schema();
+            if (source.get(field) == null) {
+                continue;
+            }
 
+            final Schema fieldSchema = field.schema();
             switch (fieldSchema.type()) {
                 case ARRAY:
                     addArrayElements(doc, parentElement, source, field.name(), field.schema().valueSchema());

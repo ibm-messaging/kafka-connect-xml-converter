@@ -13,19 +13,19 @@ A Kafka Connect plugin to make it easier to work with XML data in Kafka Connect 
 
 ## Configuration
 
-Optional configuration that can be set when using the plugin to turn XML strings into Connect records
+Optional configuration that can be set when using the plugin to turn XML strings into Connect records (XML string -> Conect Record)
 
-| **Option**             | **Default value** | **Notes**                                                        |
-|------------------------|-------------------|------------------------------------------------------------------|
-| `root.element.name`    | `root`            | The name of the root element in the XML document being parsed.   |
-| `xsd.schema.path`      |                   | Location of a schema file to use to parse the XML string. |
-| `xml.doc.flat.enable`  | `false`           | Set to true if the XML strings contain a single value (e.g. `<root>the message</root>`) |
+| **Option**            | **Default value** | **Notes**                                                                               |
+| --------------------- | ----------------- | --------------------------------------------------------------------------------------- |
+| `root.element.name`   | `root`            | The name of the root element in the XML document being parsed.                          |
+| `xsd.schema.path`     |                   | Location of a schema file to use to parse the XML string.                               |
+| `xml.doc.flat.enable` | `false`           | Set to `true` if the XML strings contain a single value (e.g. `<root>the message</root>`) |
 
-Optional configuration that can be set when using the plugin to create XML strings from Connect records
+Optional configuration that can be set when using the plugin to create XML strings from Connect records (Conect Record -> XML string)
 
-| **Option**             | **Default value** | **Notes**                                                        |
-|------------------------|-------------------|------------------------------------------------------------------|
-| `root.element.name`    | `root`            | The name to use for the root element of the XML document being created. Only used when no name can be found within the schema of the Connect record. |
+| **Option**          | **Default value** | **Notes**                                                                                                                                            |
+| ------------------- | ----------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `root.element.name` | `root`            | The name to use for the root element of the XML document being created. Only used when no name can be found within the schema of the Connect record. |
 
 ## Example uses
 
