@@ -92,7 +92,9 @@ public class XmlConverterSourceTest {
 //            { "040", true, true }
 //            { "043", true, true },
             { "044", false, false },
-            { "049", false, false }
+            { "049", false, false },
+            { "055", false, false },
+            { "056", false, false }
         });
     }
 
