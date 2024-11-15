@@ -413,7 +413,7 @@ public class StructGenerators {
             }
             case "008": {
                 final Schema value3Schema = SchemaBuilder.struct()
-                    .field("level2List1", SchemaBuilder.array(Schema.STRING_SCHEMA).build())
+                    .field("level2List1", SchemaBuilder.array(Schema.STRING_SCHEMA).optional().build())
                     .field("level2List2", SchemaBuilder.array(Schema.INT32_SCHEMA).build())
                     .build();
                 final Schema repeatingItemSchema = SchemaBuilder.struct()
@@ -455,7 +455,6 @@ public class StructGenerators {
                     .build();
 
                 final Struct value3Value = new Struct(value3Schema);
-                value3Value.put("level2List1", Collections.EMPTY_LIST);
                 value3Value.put("level2List2", List.of(10, 20, 30));
                 final Struct value2Item0 = new Struct(repeatingItemSchema);
                 value2Item0.put("level3Value6", "g");

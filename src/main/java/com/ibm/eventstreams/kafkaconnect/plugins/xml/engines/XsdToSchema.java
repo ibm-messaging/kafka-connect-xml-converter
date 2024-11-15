@@ -188,7 +188,7 @@ public class XsdToSchema {
                         builder.field(name, sch);
                     }
                     else {
-                        final Schema fieldSchema = getPrimitiveSchema(type, isOptional && !isList, isList);
+                        final Schema fieldSchema = getPrimitiveSchema(type, isOptional, isList);
                         if (fieldSchema == null) {
                             throw new NotImplementedException("Unsupported element type " + type);
                         }
@@ -352,6 +352,9 @@ public class XsdToSchema {
     private Schema getPrimitiveSchema(String xsType, boolean isOptional, boolean isList) {
         Schema type = null;
 
+        // lists are represented as an optional list of non-optional items
+        boolean optionalItem = isOptional && !isList;
+
         switch (xsType) {
             case "xs:anySimpleType":
             case "xs:anyURI":
@@ -362,24 +365,24 @@ public class XsdToSchema {
             case "xs:string":
             case "xs:time":
             case "xs:normalizedString":
-                type = isOptional ?
+                type = optionalItem ?
                             Schema.OPTIONAL_STRING_SCHEMA :
                             Schema.STRING_SCHEMA;
                 break;
             case "xs:decimal":
             case "xs:double":
-                type = isOptional ?
+                type = optionalItem ?
                             Schema.OPTIONAL_FLOAT64_SCHEMA :
                             Schema.FLOAT64_SCHEMA;
                 break;
             case "xs:float":
-                type = isOptional ?
+                type = optionalItem ?
                             Schema.OPTIONAL_FLOAT32_SCHEMA :
                             Schema.FLOAT32_SCHEMA;
                 break;
             case "xs:long":
             case "xs:unsignedLong":
-                type = isOptional ?
+                type = optionalItem ?
                             Schema.OPTIONAL_INT64_SCHEMA :
                             Schema.INT64_SCHEMA;
                 break;
@@ -390,13 +393,13 @@ public class XsdToSchema {
             case "xs:unsignedInt":
             case "xs:nonPositiveInteger":
             case "xs:negativeInteger":
-                type = isOptional ?
+                type = optionalItem ?
                             Schema.OPTIONAL_INT32_SCHEMA :
                             Schema.INT32_SCHEMA;
                 break;
             case "xs:short":
             case "xs:unsignedShort":
-                type = isOptional ?
+                type = optionalItem ?
                             Schema.OPTIONAL_INT16_SCHEMA :
                             Schema.INT16_SCHEMA;
                 break;
@@ -405,23 +408,23 @@ public class XsdToSchema {
             case "xs:gMonthDay":
             case "xs:gYear":
             case "xs:gYearMonth":
-                type = isOptional ?
+                type = optionalItem ?
                             Schema.OPTIONAL_STRING_SCHEMA :
                             Schema.STRING_SCHEMA;
                 break;
             case "xs:boolean":
-                type = isOptional ?
+                type = optionalItem ?
                             Schema.OPTIONAL_BOOLEAN_SCHEMA :
                             Schema.BOOLEAN_SCHEMA;
                 break;
             case "xs:base64Binary":
-                type = isOptional ?
+                type = optionalItem ?
                             Schema.OPTIONAL_BYTES_SCHEMA :
                             Schema.BYTES_SCHEMA;
                 break;
             case "xs:byte":
             case "xs:unsignedByte":
-                type = isOptional ?
+                type = optionalItem ?
                     SchemaBuilder.bytes().doc("xs:byte").optional().build() :
                     SchemaBuilder.bytes().doc("xs:byte").build();
                 break;
@@ -430,9 +433,15 @@ public class XsdToSchema {
                 return null;
         }
 
-        return isList ?
-                SchemaBuilder.array(type).build() :
-                type;
+        if (isList) {
+            SchemaBuilder arraySchemaBuilder = SchemaBuilder.array(type);
+            return isOptional ?
+                arraySchemaBuilder.optional().build() :
+                arraySchemaBuilder.build();
+        }
+        else {
+            return type;
+        }
     }
 
 

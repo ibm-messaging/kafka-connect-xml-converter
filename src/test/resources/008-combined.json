@@ -136,7 +136,7 @@
                             "type": "string",
                             "optional": false
                         },
-                        "optional": false,
+                        "optional": true,
                         "field": "level2List1"
                     },
                     {
@@ -179,7 +179,7 @@
             }
         },
         "level1Value3": {
-            "level2List1": [],
+            "level2List1": null,
             "level2List2": [
                 10,
                 20,
