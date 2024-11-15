@@ -1811,6 +1811,34 @@ public class StructGenerators {
 
                 return new SchemaAndValue(schema, value);
             }
+            case "055": {
+                final Schema schema = SchemaBuilder.struct()
+                    .name("root")
+                    .field("message", Schema.STRING_SCHEMA)
+                    .field("optionallist", SchemaBuilder.array(Schema.STRING_SCHEMA).optional().build())
+                    .build();
+
+                final Struct value = new Struct(schema);
+                value.put("message", "Hello World");
+
+                return new SchemaAndValue(schema, value);
+            }
+            case "056": {
+                final Schema innerSchema = SchemaBuilder.struct()
+                    .field("innermessage", Schema.STRING_SCHEMA)
+                    .build();
+
+                final Schema schema = SchemaBuilder.struct()
+                    .name("root")
+                    .field("message", Schema.STRING_SCHEMA)
+                    .field("optionallist", SchemaBuilder.array(innerSchema).optional().build())
+                    .build();
+
+                final Struct value = new Struct(schema);
+                value.put("message", "Hello World");
+
+                return new SchemaAndValue(schema, value);
+            }
         }
         throw new NotImplementedException("Unrecognised test " + testCaseId);
     }

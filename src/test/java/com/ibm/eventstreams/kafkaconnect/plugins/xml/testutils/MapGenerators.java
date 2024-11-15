@@ -1028,6 +1028,14 @@ public class MapGenerators {
                 value.put("data", data);
                 break;
             }
+            case "055": {
+                value.put("message", "Hello World");
+                break;
+            }
+            case "056": {
+                value.put("message", "Hello World");
+                break;
+            }
         }
         return value;
     }
