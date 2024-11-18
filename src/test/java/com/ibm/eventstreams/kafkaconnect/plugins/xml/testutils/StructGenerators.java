@@ -413,7 +413,7 @@ public class StructGenerators {
             }
             case "008": {
                 final Schema value3Schema = SchemaBuilder.struct()
-                    .field("level2List1", SchemaBuilder.array(Schema.STRING_SCHEMA).build())
+                    .field("level2List1", SchemaBuilder.array(Schema.STRING_SCHEMA).optional().build())
                     .field("level2List2", SchemaBuilder.array(Schema.INT32_SCHEMA).build())
                     .build();
                 final Schema repeatingItemSchema = SchemaBuilder.struct()
@@ -455,7 +455,6 @@ public class StructGenerators {
                     .build();
 
                 final Struct value3Value = new Struct(value3Schema);
-                value3Value.put("level2List1", Collections.EMPTY_LIST);
                 value3Value.put("level2List2", List.of(10, 20, 30));
                 final Struct value2Item0 = new Struct(repeatingItemSchema);
                 value2Item0.put("level3Value6", "g");
@@ -1808,6 +1807,34 @@ public class StructGenerators {
                 value.put("estatus-tx", "1");
                 value.put("version", "7.0.1001.2");
                 value.put("data", data);
+
+                return new SchemaAndValue(schema, value);
+            }
+            case "055": {
+                final Schema schema = SchemaBuilder.struct()
+                    .name("root")
+                    .field("message", Schema.STRING_SCHEMA)
+                    .field("optionallist", SchemaBuilder.array(Schema.STRING_SCHEMA).optional().build())
+                    .build();
+
+                final Struct value = new Struct(schema);
+                value.put("message", "Hello World");
+
+                return new SchemaAndValue(schema, value);
+            }
+            case "056": {
+                final Schema innerSchema = SchemaBuilder.struct()
+                    .field("innermessage", Schema.STRING_SCHEMA)
+                    .build();
+
+                final Schema schema = SchemaBuilder.struct()
+                    .name("root")
+                    .field("message", Schema.STRING_SCHEMA)
+                    .field("optionallist", SchemaBuilder.array(innerSchema).optional().build())
+                    .build();
+
+                final Struct value = new Struct(schema);
+                value.put("message", "Hello World");
 
                 return new SchemaAndValue(schema, value);
             }

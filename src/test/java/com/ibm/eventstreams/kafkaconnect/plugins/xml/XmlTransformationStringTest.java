@@ -78,7 +78,9 @@ public class XmlTransformationStringTest {
             { "037", false, false },
             { "052", true, true },
             { "053", true, true },
-            { "054", false, true }
+            { "054", false, true },
+            { "055", false, false },
+            { "056", false, false }
         });
     }
 

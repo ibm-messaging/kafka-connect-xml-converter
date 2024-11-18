@@ -92,7 +92,9 @@ public class XmlTransformationStructTest {
             { "044", false },
             { "046", false },
             { "048", false },
-            { "049", false }
+            { "049", false },
+            { "055", false },
+            { "056", false }
         });
     }
 

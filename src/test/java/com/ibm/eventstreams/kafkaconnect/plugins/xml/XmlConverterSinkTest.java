@@ -91,7 +91,9 @@ public class XmlConverterSinkTest {
             { "047", false, true, false },
             { "052", false, false, false },
             { "053", false, false, false },
-            { "054", false, true, false }
+            { "054", false, true, false },
+            { "055", false, false, false },
+            { "056", false, false, false }
         });
     }
 
