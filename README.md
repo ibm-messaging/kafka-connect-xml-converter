@@ -1,24 +1,24 @@
-# kafka-connect-xml-converter
+# Kafka Connect XML converter and transformation
 
-A Kafka Connect plugin to make it easier to work with XML data in Kafka Connect pipelines.
+Kafka Connect XML converter and transformation plugins make it easier to work with XML data in Kafka Connect pipelines.
 
 ## Contents
 
 - `com.ibm.eventstreams.kafkaconnect.plugins.xml.XmlConverter`
-    - a Kafka Connect converter for converting to/from XML strings
+  - a Kafka Connect converter for converting to/from XML strings
 - `com.ibm.eventstreams.kafkaconnect.plugins.xml.XmlTransformation`
-    - a Kafka Connect transformation for converting Kafka Connect records to/from XML strings
+  - a Kafka Connect transformation for converting Kafka Connect records to/from XML strings
 - `com.ibm.eventstreams.kafkaconnect.plugins.xml.XmlMQRecordBuilder`
-    - an MQ Source Record builder for parsing MQ messages containing XML strings
+  - an MQ Source Record builder for parsing MQ messages containing XML strings
 
 ## Configuration
 
-Optional configuration that can be set when using the plugin to turn XML strings into Connect records (XML string -> Conect Record)
+Optional configuration that can be set when using the plugins to turn XML strings into Connect records (XML string -> Conect Record)
 
-| **Option**            | **Default value** | **Notes**                                                                               |
-| --------------------- | ----------------- | --------------------------------------------------------------------------------------- |
-| `root.element.name`   | `root`            | The name of the root element in the XML document being parsed.                          |
-| `xsd.schema.path`     |                   | Location of a schema file to use to parse the XML string.                               |
+| **Option**            | **Default value** | **Notes**                                                                                 |
+| --------------------- | ----------------- | ----------------------------------------------------------------------------------------- |
+| `root.element.name`   | `root`            | The name of the root element in the XML document being parsed.                            |
+| `xsd.schema.path`     |                   | Location of a schema file to use to parse the XML string.                                 |
 | `xml.doc.flat.enable` | `false`           | Set to `true` if the XML strings contain a single value (e.g. `<root>the message</root>`) |
 
 Optional configuration that can be set when using the plugin to create XML strings from Connect records (Conect Record -> XML string)
