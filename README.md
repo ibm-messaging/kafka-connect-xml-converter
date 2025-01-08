@@ -1,19 +1,19 @@
-# Kafka Connect XML converter and transformation
+# Kafka Connect XML converter and transformation plug-ins
 
-Kafka Connect XML converter and transformation plugins make it easier to work with XML data in Kafka Connect pipelines.
+The Kafka Connect XML converter and transformation plug-ins make it easier to work with XML data in Kafka Connect pipelines.
 
 ## Contents
 
 - `com.ibm.eventstreams.kafkaconnect.plugins.xml.XmlConverter`
-  - a Kafka Connect converter for converting to/from XML strings
+  A Kafka Connect converter for converting between Kafka Connect’s internal data format and XML strings.
 - `com.ibm.eventstreams.kafkaconnect.plugins.xml.XmlTransformation`
-  - a Kafka Connect transformation for converting Kafka Connect records to/from XML strings
+  A Single Message Transform (SMT) that takes a Kafka Connect record containing an XML string and transforms it into a structured Connect record.
 - `com.ibm.eventstreams.kafkaconnect.plugins.xml.XmlMQRecordBuilder`
-  - an MQ Source Record builder for parsing MQ messages containing XML strings
+  - An MQ Source Record builder for parsing MQ messages containing XML strings.
 
 ## Configuration
 
-Optional configuration that can be set when using the plugins to turn XML strings into Connect records (XML string -> Conect Record)
+The following table lists optional configuration that can be set when turning XML strings into Connect records by using the plug-ins (XML string to Connect record).
 
 | **Option**            | **Default value** | **Notes**                                                                                 |
 | --------------------- | ----------------- | ----------------------------------------------------------------------------------------- |
