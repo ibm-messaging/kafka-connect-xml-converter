@@ -5,23 +5,23 @@ The Kafka Connect XML converter and transformation plug-ins make it easier to wo
 ## Contents
 
 - `com.ibm.eventstreams.kafkaconnect.plugins.xml.XmlConverter`
-  A Kafka Connect converter for converting between Kafka Connect’s internal data format and XML strings.
+  A Kafka Connect converter for converting between structured objects (Kafka Connect's internal data format, and Java Maps and Lists) and XML strings.
 - `com.ibm.eventstreams.kafkaconnect.plugins.xml.XmlTransformation`
   A Single Message Transform (SMT) that takes a Kafka Connect record containing an XML string and transforms it into a structured Connect record.
 - `com.ibm.eventstreams.kafkaconnect.plugins.xml.XmlMQRecordBuilder`
-  - An MQ Source Record builder for parsing MQ messages containing XML strings.
+  An MQ Source Record builder for parsing MQ messages containing XML strings.
 
 ## Configuration
 
 The following table lists optional configuration that can be set when turning XML strings into Connect records by using the plug-ins (XML string to Connect record).
 
-| **Option**            | **Default value** | **Notes**                                                                                 |
-| --------------------- | ----------------- | ----------------------------------------------------------------------------------------- |
-| `root.element.name`   | `root`            | The name of the root element in the XML document being parsed.                            |
-| `xsd.schema.path`     |                   | Location of a schema file to use to parse the XML string.                                 |
-| `xml.doc.flat.enable` | `false`           | Set to `true` if the XML strings contain a single value (e.g. `<root>the message</root>`) |
+| **Option**            | **Default value** | **Notes**                                                                                         |
+| --------------------- | ----------------- | ------------------------------------------------------------------------------------------------- |
+| `root.element.name`   | `root`            | The name of the root element in the XML document that is being parsed.                            |
+| `xsd.schema.path`     |                   | The location of the schema file to use when parsing the XML string.                               |
+| `xml.doc.flat.enable` | `false`           | Set to `true` if the XML strings contain a single value (for example, `<root>the message</root>`) |
 
-Optional configuration that can be set when using the plugin to create XML strings from Connect records (Conect Record -> XML string)
+The following table lists optional configuration that can be set when turning Connect records into XML strings by using the plug-ins (Connect Record to XML string)
 
 | **Option**          | **Default value** | **Notes**                                                                                                                                            |
 | ------------------- | ----------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -29,21 +29,21 @@ Optional configuration that can be set when using the plugin to create XML strin
 
 ## Example uses
 
-Use **`XmlConverter`** with Source Connectors to produce structured Connect records to Kafka topics as XML strings.
+Use **`XmlConverter`** with source connectors to produce structured Connect records to Kafka topics as XML strings.
 
 ```properties
 value.converter=com.ibm.eventstreams.kafkaconnect.plugins.xml.XmlConverter
 value.converter.schemas.enable=false
 ```
 
-Use **`XmlConverter`** with Source Connectors to produce Connect records to Kafka topics as XML strings, with an embedded XSD schema. (requires structs)
+Use **`XmlConverter`** with source connectors to produce Connect records to Kafka topics as XML strings, with an embedded XSD schema (requires structured objects).
 
 ```properties
 value.converter=com.ibm.eventstreams.kafkaconnect.plugins.xml.XmlConverter
 value.converter.schemas.enable=true
 ```
 
-Use **`XmlTransformation`** with Sink Connectors to convert a Connect record containing an XML string into a structured Connect record.
+Use **`XmlTransformation`** with sink connectors to convert a Connect record containing an XML string into a structured Connect record.
 
 ```properties
 transforms=xmlconvert
@@ -51,14 +51,14 @@ transforms.xmlconvert.type=com.ibm.eventstreams.kafkaconnect.plugins.xml.XmlTran
 transforms.xmlconvert.converter.type=value
 ```
 
-Use **`XmlConverter`** with the MQ Sink Connector to send non-XML Kafka messages to MQ queues as XML strings.
+Use **`XmlConverter`** with the IBM MQ sink connector to send non-XML Kafka messages to MQ queues as XML strings.
 
 ```properties
 mq.message.builder=com.ibm.eventstreams.connect.mqsink.builders.ConverterMessageBuilder
 mq.message.builder.value.converter=com.ibm.eventstreams.kafkaconnect.plugins.xml.XmlConverter
 ```
 
-Use **`XmlMQRecordBuilder`** with the MQ Source Connector to convert XML strings from MQ queues into Connect records.
+Use **`XmlMQRecordBuilder`** with the IBM MQ source connector to convert XML strings from MQ queues into Connect records.
 
 ```properties
 mq.record.builder=com.ibm.eventstreams.kafkaconnect.plugins.xml.XmlMQRecordBuilder
@@ -68,11 +68,11 @@ mq.record.builder.xsd.schema.path=/location/of/mq-message-schema.xsd
 
 ## Adding the IBM MQ Source Connector JAR to the Project
 
-To build the project, you need to pull and install the latest IBM MQ Source Connector JAR. Follow these steps:
+To build the project, you need to pull and install the latest IBM MQ source connector JAR. Follow these steps:
 
 1. **Download the MQ Source Connector JAR**
 
-   Download the latest version of the MQ Source Connector JAR from the official IBM GitHub releases page:
+   Download the latest version of the IBM MQ source connector JAR from the official IBM GitHub releases page:
 
    ```bash
    curl -L -o kafka-connect-mq-source-<VERSION>.jar https://github.com/ibm-messaging/kafka-connect-mq-source/releases/download/v<VERSION>/kafka-connect-mq-source-<VERSION>.jar
